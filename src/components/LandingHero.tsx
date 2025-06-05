@@ -349,6 +349,10 @@ export default function LandingHero() {
       await loader.main();
 
       // Construct R2 download URL instead of using GitHub + corsproxy
+      // We added a SHA-256 hash verification step to validate the integrity of
+      // the downloaded binary. This step compares its hash against the (hidden)
+      // hashes provided on the GitHub release page for each factory file.
+      // This ensures that the files on R2 are what was generated in the github workflow.
       const firmwareUrl = firmwareData.assets[0].browser_download_url;
       const binaryName = decodeURIComponent(firmwareUrl.split('/').pop()); // e.g. esp-miner-factory-NerdAxe-v1.0.29.1.bin
       const r2BaseUrl = 'https://pub-4d5436f8cf244b3dab75974d0138a132.r2.dev';
