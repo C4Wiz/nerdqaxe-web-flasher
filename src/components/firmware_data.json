@@ -1,14 +1,19 @@
 {
     "devices": [
         {
-            "name": "NerdQAxe+ (4 x BM1368)",
-            "repository": "https://github.com/shufps/ESP-Miner-NerdQAxePlus",
-            "file": "NerdQAxe+"
-        },
-        {
             "name": "NerdQAxe++ (4 x BM1370)",
             "repository": "https://github.com/shufps/ESP-Miner-NerdQAxePlus",
             "file": "NerdQAxe++"
+        },
+        {
+            "name": "NerdQX (4 x BM1370)",
+            "repository": "https://github.com/shufps/ESP-Miner-NerdQAxePlus",
+            "file": "NerdQX"
+        },
+        {
+            "name": "NerdQAxe+ (4 x BM1368)",
+            "repository": "https://github.com/shufps/ESP-Miner-NerdQAxePlus",
+            "file": "NerdQAxe+"
         },
         {
             "name": "NerdAxe (1 x BM1366)",
