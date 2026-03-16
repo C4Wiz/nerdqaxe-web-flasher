@@ -477,6 +477,19 @@ export default function LandingHero() {
   return (
     <>
       <Header onOpenPanel={() => setIsPanelOpen(true)} />
+      <div className="bg-amber-50 dark:bg-amber-950/30 border-b border-amber-200 dark:border-amber-800 px-4 py-2 text-center text-sm">
+        <span className="text-amber-800 dark:text-amber-200">
+          Want to flash a Bitaxe device?{' '}
+          <a
+            href="https://bitaxeorg.github.io/bitaxe-web-flasher/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium underline hover:text-amber-600 dark:hover:text-amber-400"
+          >
+            Check the Bitaxe flasher
+          </a>
+        </span>
+      </div>
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
