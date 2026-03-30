@@ -2,11 +2,11 @@
 
 # NerdQaxe++ Web Flasher
 
-The Nerd*axe Web Flasher is the open source tool that provides you an easy solution to flash a factory file to you device.
+The NerdQaxe++ Web Flasher is the open source tool that provides you an easy solution to flash a factory file to you NerdQaxe++.
 
 ## Flashing process
 
-Simply connect your device, select the model and board version and click on flash.
+Simply connect your device, select the firmware version and click on flash.
 
 ## Development / Run locally
 
