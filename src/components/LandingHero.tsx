@@ -41,6 +41,11 @@ export default function LandingHero() {
     setIsChromiumBased(isChromium);
   }, []);
 
+  // Auto-select the only available device
+  useEffect(() => {
+    setSelectedDevice(device_data.devices[0].name);
+  }, []);
+
   useEffect(() => {
     if (terminalContainerRef.current && !terminalRef.current && isLogging) {
       const term = new Terminal({
@@ -87,14 +92,12 @@ export default function LandingHero() {
 
   // Extract the SHA256 hash from the release notes
   const extractSHA256Hash = (releaseBody: string, binaryName: string) => {
-    //console.log(releaseBody);
-    //console.log(binaryName);
     const lines = (releaseBody || '').split('\n');
     for (const line of lines) {
       if (line.includes(binaryName)) {
         const parts = line.split(/\s+/);
         if (parts.length > 1 && parts[1] === binaryName) {
-          return parts[0]; // Return the first part as the hash
+          return parts[0];
         }
       }
     }
@@ -122,7 +125,6 @@ export default function LandingHero() {
   };
 
   // Fetch filtered releases from GitHub.
-  // If showPreReleases is true, we only filter out drafts.
   const fetchReleases = async (repositoryUrl: string, selectedDevice: string) => {
     try {
       const { owner, repo } = parseGitHubRepo(repositoryUrl);
@@ -212,7 +214,6 @@ export default function LandingHero() {
     setKeepConfig(event.target.checked);
   };
 
-  // New handler for toggling "Show Pre-Releases"
   const handleShowPreReleasesToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setShowPreReleases(event.target.checked);
   };
@@ -227,7 +228,6 @@ export default function LandingHero() {
       setIsLogging(true);
       const port = serialPortRef.current;
 
-      // First ensure any existing connections are cleaned up
       if (readerRef.current) {
         await readerRef.current.cancel();
       }
@@ -235,7 +235,6 @@ export default function LandingHero() {
         await readableStreamClosedRef.current;
       }
 
-      // Set up text decoder stream
       const decoder = new TextDecoderStream();
       const inputDone = port.readable.pipeTo(decoder.writable);
       const inputStream = decoder.readable;
@@ -319,17 +318,14 @@ export default function LandingHero() {
     setStatus(t('status.preparing'));
 
     try {
-      // Stop logging if it's active
       if (isLogging) {
         await stopSerialLogging();
       }
 
-      // Close the current connection
       if (serialPortRef.current.readable) {
         await serialPortRef.current.close();
       }
 
-      // Create transport and ESPLoader for flashing
       const transport = new Transport(serialPortRef.current);
       const loader = new ESPLoader({
         transport,
@@ -337,31 +333,20 @@ export default function LandingHero() {
         romBaudrate: 115200,
         terminal: {
           clean() { },
-          writeLine(data: string) {
-            // setStatus(data);
-          },
-          write(data: string) {
-            // setStatus(data);
-          },
+          writeLine(data: string) { },
+          write(data: string) { },
         },
       });
 
       await loader.main();
 
-      // Construct R2 download URL instead of using GitHub + corsproxy
-      // We added a SHA-256 hash verification step to validate the integrity of
-      // the downloaded binary. This step compares its hash against the (hidden)
-      // hashes provided on the GitHub release page for each factory file.
-      // This ensures that the files on R2 are what was generated in the github workflow.
       const firmwareUrl = firmwareData.assets[0].browser_download_url;
-      const binaryName = decodeURIComponent(firmwareUrl.split('/').pop()); // e.g. esp-miner-factory-NerdAxe-v1.0.29.1.bin
+      const binaryName = decodeURIComponent(firmwareUrl.split('/').pop());
       const r2BaseUrl = 'https://pub-4d5436f8cf244b3dab75974d0138a132.r2.dev';
-
       const r2Url = `${r2BaseUrl}/${selectedFirmware}/${binaryName}`;
 
       console.log(`Downloading firmware from R2: ${r2Url}`);
 
-      // Fetch SHA256 from GitHub release body (still valid)
       const sha256Hash = await fetchSHA256Hash(device.repository, selectedFirmware, binaryName);
 
       if (sha256Hash) {
@@ -379,9 +364,7 @@ export default function LandingHero() {
 
       const firmwareArrayBuffer = await firmwareResponse.arrayBuffer();
 
-      // Compare the calculated hash with the fetched hash
       if (sha256Hash) {
-      // Calculate the SHA256 hash of the downloaded binary
         const calculatedHash = await calculateSHA256(firmwareArrayBuffer);
         console.log(`Calculated SHA256 hash of downloaded binary: ${calculatedHash}`);
 
@@ -392,8 +375,6 @@ export default function LandingHero() {
           throw new Error('Hash verification failed');
         }
       } else {
-        // version 1.0.23 and earlier don't have hashes on the release page
-        // in this case we warn silently in the console but accept the risk
         console.warn("no SHA256 found on the release page!");
       }
 
@@ -404,8 +385,6 @@ export default function LandingHero() {
 
       setStatus(t('status.flashing', { percent: 0 }));
 
-      // On all Nerd*axe derivatives the same
-      // address and length is from the partitions.csv
       const nvsStart = 0x9000;
       const nvsSize = 0x6000;
 
@@ -414,18 +393,18 @@ export default function LandingHero() {
       if (keepConfig) {
         parts = [
           {
-            data: firmwareBinaryString.slice(0, nvsStart), // Data before NVS
+            data: firmwareBinaryString.slice(0, nvsStart),
             address: 0,
           },
           {
-            data: firmwareBinaryString.slice(nvsStart + nvsSize), // Data after NVS
+            data: firmwareBinaryString.slice(nvsStart + nvsSize),
             address: nvsStart + nvsSize,
           },
         ];
       } else {
         parts = [
           {
-            data: firmwareBinaryString, // Entire firmware binary
+            data: firmwareBinaryString,
             address: 0,
           },
         ];
@@ -498,18 +477,11 @@ export default function LandingHero() {
                 <Usb className="ml-2 h-4 w-4" />
               </Button>
               <Selector
-                placeholder={t('hero.selectDevice')}
-                values={device_data.devices.map((d) => d.name)}
-                onValueChange={setSelectedDevice}
+                placeholder={t('hero.selectFirmware')}
+                values={firmwareOptions.map((f) => f.version)}
+                onValueChange={setSelectedFirmware}
+                disabled={isConnecting || isFlashing}
               />
-              {selectedDevice && (
-                <Selector
-                  placeholder={t('hero.selectFirmware')}
-                  values={firmwareOptions.map((f) => f.version)}
-                  onValueChange={setSelectedFirmware}
-                  disabled={isConnecting || isFlashing}
-                />
-              )}
               <div className="flex items-center justify-between">
                 <div>
                   <input
