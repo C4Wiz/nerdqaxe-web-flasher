@@ -6,15 +6,13 @@ import { I18nProvider } from '../components/I18nProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const basePath = process.env.NODE_ENV === 'production' ? '/nerdqaxe-web-flasher' : ''
-
 export const metadata: Metadata = {
   title: 'NerdQaxe++ Web Flasher',
   description: 'Flash your NerdQaxe++ directly from the web',
   icons: {
     icon: [
       {
-        url: `${basePath}/pictures/logo.png`,
+        url: '/pictures/logo.png',
         sizes: 'any',
         type: 'image/png',
       }
@@ -32,11 +30,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClientThemeWrapper>
           <I18nProvider>
-              <div className="min-h-screen bg-background text-foreground">
-                <main className="w-full p-4">
-                  {children}
-                </main>
-              </div>
+            <div className="min-h-screen bg-background text-foreground">
+              <main className="w-full p-4">
+                {children}
+              </main>
+            </div>
           </I18nProvider>
         </ClientThemeWrapper>
       </body>
