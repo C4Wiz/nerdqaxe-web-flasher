@@ -92,13 +92,8 @@ export default function LandingHero() {
       const data = await response.json();
 
       const releases = showPreReleases
-        ? data.releases
-        : data.releases.filter((r: any) =>
-            !r.version.includes('rc') &&
-            !r.version.includes('beta') &&
-            !r.version.includes('alpha')
-          );
-
+  ? data.releases
+  : data.releases.filter((r: any) => !r.prerelease);
       return releases;
     } catch (error) {
       console.error('Error fetching releases:', error);
