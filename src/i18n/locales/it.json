@@ -11,7 +11,7 @@
         "instructions": "Istruzioni"
     },
     "hero": {
-        "title": "Flasha il tuo Nerd*axe direttamente dal Web",
+        "title": "Flasha il tuo NerdQaxe++ direttamente dal Web",
         "description": "Collega il tuo dispositivo, seleziona il modello e la versione della scheda e inizia subito il flashing. Nessuna configurazione richiesta.",
         "getStarted": "Inizia",
         "connect": "Connetti",
@@ -31,7 +31,7 @@
         "title": "Caratteristiche principali",
         "fastFlashing": {
             "title": "Flash rapido",
-            "description": "Flasha il tuo Nerd*axe in pochi secondi, non minuti."
+            "description": "Flasha il tuo NerdQaxe++ in pochi secondi, non minuti."
         },
         "webBased": {
             "title": "Basato sul Web",
@@ -45,7 +45,7 @@
     "instructions": {
         "title": "Come utilizzare",
         "steps": {
-            "1": "Collega il tuo Nerd*axe al computer.",
+            "1": "Collega il tuo NerdQaxe++ al computer.",
             "2": "Clicca su \"Connetti dispositivo\" e seleziona il tuo dispositivo dal popup.",
             "3": "Seleziona il modello del dispositivo dal menu a discesa.",
             "4": "Scegli la versione appropriata della scheda.",
