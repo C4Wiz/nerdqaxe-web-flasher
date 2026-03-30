@@ -13,6 +13,8 @@ import device_data from './firmware_data.json'
 import { Terminal } from '@xterm/xterm';
 import '@xterm/xterm/css/xterm.css';
 
+const R2_BASE_URL = 'https://pub-f8ed8218b3b94a659b581f81c298b179.r2.dev';
+
 export default function LandingHero() {
   const { t } = useTranslation();
   const [selectedDevice, setSelectedDevice] = useState<string>('')
@@ -73,36 +75,7 @@ export default function LandingHero() {
   const devices = device_data.devices;
   const device = selectedDevice !== ''
     ? devices.find(d => d.name == selectedDevice)!
-    : { "name": "", "repository": "", "file": ""};
-
-  // Helper function to extract GitHub repository details
-  const parseGitHubRepo = (repositoryUrl: string) => {
-    const repoMatch = repositoryUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
-    if (!repoMatch) throw new Error('Invalid repository URL');
-    const [_, owner, repo] = repoMatch;
-    return { owner, repo };
-  };
-
-  // Helper function to fetch data from GitHub API
-  const fetchGitHubAPI = async (url: string) => {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`GitHub API returned ${response.status}`);
-    return response.json();
-  };
-
-  // Extract the SHA256 hash from the release notes
-  const extractSHA256Hash = (releaseBody: string, binaryName: string) => {
-    const lines = (releaseBody || '').split('\n');
-    for (const line of lines) {
-      if (line.includes(binaryName)) {
-        const parts = line.split(/\s+/);
-        if (parts.length > 1 && parts[1] === binaryName) {
-          return parts[0];
-        }
-      }
-    }
-    return null;
-  };
+    : { "name": "", "repository": "", "file": "" };
 
   const calculateSHA256 = async (data: ArrayBuffer) => {
     const hashBuffer = await crypto.subtle.digest('SHA-256', data);
@@ -111,62 +84,37 @@ export default function LandingHero() {
       .join('');
   };
 
-  // Fetch the SHA256 hash for a specific binary
-  const fetchSHA256Hash = async (repositoryUrl: string, versionTag: string, binaryName: string) => {
+  // Fetch releases from R2 instead of GitHub API
+  const fetchReleases = async () => {
     try {
-      const { owner, repo } = parseGitHubRepo(repositoryUrl);
-      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases/tags/${versionTag}`;
-      const release = await fetchGitHubAPI(apiUrl);
-      return extractSHA256Hash(release.body, binaryName);
-    } catch (error) {
-      console.error('Error fetching SHA256 hash:', error);
-      return null;
-    }
-  };
+      const response = await fetch(`${R2_BASE_URL}/releases.json`);
+      if (!response.ok) throw new Error(`Failed to fetch releases (status ${response.status})`);
+      const data = await response.json();
 
-  // Fetch filtered releases from GitHub.
-  const fetchReleases = async (repositoryUrl: string, selectedDevice: string) => {
-    try {
-      const { owner, repo } = parseGitHubRepo(repositoryUrl);
-      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases`;
-      const releases = await fetchGitHubAPI(apiUrl);
+      const releases = showPreReleases
+        ? data.releases
+        : data.releases.filter((r: any) =>
+            !r.version.includes('rc') &&
+            !r.version.includes('beta') &&
+            !r.version.includes('alpha')
+          );
 
-      const filteredReleases = showPreReleases
-        ? releases.filter((release: any) => !release.draft)
-        : releases.filter((release: any) => !release.prerelease && !release.draft);
-
-      return filteredReleases.map((release: any) => ({
-        version: release.tag_name,
-        name: release.name,
-        assets: release.assets.filter((asset: any) =>
-          asset.name.toLowerCase().startsWith(
-            `esp-miner-factory-${selectedDevice.toLowerCase()}-${release.tag_name}`.toLowerCase()
-          ),
-        ),
-      })).filter((release: any) => release.assets.length > 0);
+      return releases;
     } catch (error) {
       console.error('Error fetching releases:', error);
+      setStatus('Failed to fetch firmware versions. Please try again later.');
       return [];
     }
   };
 
-  // Update firmware options whenever the selected device or showPreReleases changes
+  // Update firmware options on mount and when showPreReleases changes
   useEffect(() => {
     const updateFirmwareOptions = async () => {
-      if (!selectedDevice) {
-        setFirmwareOptions([]);
-        return;
-      }
-
-      const device = device_data.devices.find((d) => d.name === selectedDevice);
-      if (device) {
-        const firmwareData = await fetchReleases(device.repository, device.file);
-        setFirmwareOptions(firmwareData);
-      }
+      const firmwareData = await fetchReleases();
+      setFirmwareOptions(firmwareData);
     };
-
     updateFirmwareOptions();
-  }, [selectedDevice, showPreReleases]);
+  }, [showPreReleases]);
 
   const handleConnect = async () => {
     setIsConnecting(true)
@@ -290,7 +238,7 @@ export default function LandingHero() {
     const a = document.createElement('a');
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     a.href = url;
-    a.download = `bitaxe-logs-${timestamp}.txt`;
+    a.download = `nerdqaxe-logs-${timestamp}.txt`;
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
@@ -340,14 +288,13 @@ export default function LandingHero() {
 
       await loader.main();
 
-      const firmwareUrl = firmwareData.assets[0].browser_download_url;
-      const binaryName = decodeURIComponent(firmwareUrl.split('/').pop());
-      const r2BaseUrl = 'https://pub-4d5436f8cf244b3dab75974d0138a132.r2.dev';
-      const r2Url = `${r2BaseUrl}/${selectedFirmware}/${binaryName}`;
+      const binaryName = firmwareData.assets[0].name;
+      const r2Url = `${R2_BASE_URL}/${selectedFirmware}/${binaryName}`;
 
       console.log(`Downloading firmware from R2: ${r2Url}`);
 
-      const sha256Hash = await fetchSHA256Hash(device.repository, selectedFirmware, binaryName);
+      // SHA256 is now stored directly in releases.json
+      const sha256Hash = firmwareData.sha256 ?? null;
 
       if (sha256Hash) {
         console.log(`Found SHA256 hash: ${sha256Hash}`);
@@ -366,16 +313,16 @@ export default function LandingHero() {
 
       if (sha256Hash) {
         const calculatedHash = await calculateSHA256(firmwareArrayBuffer);
-        console.log(`Calculated SHA256 hash of downloaded binary: ${calculatedHash}`);
+        console.log(`Calculated SHA256: ${calculatedHash}`);
 
         if (calculatedHash === sha256Hash) {
-          console.log('SHA256 hash verification successful. Binary is valid.');
+          console.log('SHA256 verification successful.');
         } else {
-          console.error('SHA256 hash verification failed! Binary may be corrupted or tampered with.');
+          console.error('SHA256 verification failed!');
           throw new Error('Hash verification failed');
         }
       } else {
-        console.warn("no SHA256 found on the release page!");
+        console.warn('No SHA256 found, skipping verification.');
       }
 
       const firmwareUint8Array = new Uint8Array(firmwareArrayBuffer);
