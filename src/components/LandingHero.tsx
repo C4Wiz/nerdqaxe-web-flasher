@@ -92,7 +92,7 @@ export default function LandingHero() {
       const data = await response.json();
 
       const releases = showPreReleases
-  ? data.releases
+  ? data.releases.filter((r: any) => r.prerelease)
   : data.releases.filter((r: any) => !r.prerelease);
       return releases;
     } catch (error) {
