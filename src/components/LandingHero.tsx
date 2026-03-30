@@ -476,12 +476,14 @@ export default function LandingHero() {
                 {isConnected ? t('hero.disconnect') : t('hero.connect')}
                 <Usb className="ml-2 h-4 w-4" />
               </Button>
-              <Selector
-                placeholder={t('hero.selectFirmware')}
-                values={firmwareOptions.map((f) => f.version)}
-                onValueChange={setSelectedFirmware}
-                disabled={isConnecting || isFlashing}
-              />
+              {isConnected && (
+                <Selector
+                  placeholder={t('hero.selectFirmware')}
+                  values={firmwareOptions.map((f) => f.version)}
+                  onValueChange={setSelectedFirmware}
+                  disabled={isConnecting || isFlashing}
+                />
+              )}
               <div className="flex items-center justify-between">
                 <div>
                   <input
