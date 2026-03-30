@@ -11,7 +11,7 @@
       "instructions": "Instruções"
     },
     "hero": {
-      "title": "Grave Seu Nerd*axe Diretamente da Web",
+      "title": "Grave Seu NerdQaxe++ Diretamente da Web",
       "description": "Conecte seu dispositivo, selecione seu modelo e versão da placa, e inicie a gravação imediatamente. Nenhuma configuração necessária.",
       "getStarted": "Começar",
       "connect": "Conectar",
@@ -31,7 +31,7 @@
       "title": "Principais Recursos",
       "fastFlashing": {
         "title": "Gravação Rápida",
-        "description": "Grave seu Nerd*axe em segundos, não minutos."
+        "description": "Grave seu NerdQaxe++ em segundos, não minutos."
       },
       "webBased": {
         "title": "Baseado na Web",
@@ -45,7 +45,7 @@
     "instructions": {
       "title": "Como Usar",
       "steps": {
-        "1": "Conecte seu Nerd*axe ao computador.",
+        "1": "Conecte seu NerdQaxe++ ao computador.",
         "2": "Clique em \"Conectar Dispositivo\" e selecione seu dispositivo na janela pop-up.",
         "3": "Selecione o modelo do dispositivo no menu suspenso.",
         "4": "Escolha a versão apropriada da placa.",
