@@ -11,7 +11,7 @@
       "instructions": "Instructions"
     },
     "hero": {
-      "title": "Flash Your Nerd*axe Directly from the Web",
+      "title": "Flash your NerdQaxe++ directly from the web",
       "description": "Connect your device, select your model and board version, and start flashing immediately. No setup required.",
       "getStarted": "Get Started",
       "connect": "Connect",
@@ -31,7 +31,7 @@
       "title": "Key Features",
       "fastFlashing": {
         "title": "Fast Flashing",
-        "description": "Flash your Nerd*axe in seconds, not minutes."
+        "description": "Flash your NerdQaxe++ in seconds, not minutes."
       },
       "webBased": {
         "title": "Web-Based",
@@ -45,7 +45,7 @@
     "instructions": {
       "title": "How to Use",
       "steps": {
-        "1": "Connect your Nerd*axe to your computer.",
+        "1": "Connect your NerdQaxe++ to your computer.",
         "2": "Click \"Connect Device\" and select your device from the popup.",
         "3": "Select your device model from the dropdown.",
         "4": "Choose the appropriate board version.",
