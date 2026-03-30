@@ -19,11 +19,6 @@ export default function Features() {
             title={t('features.webBased.title')}
             description={t('features.webBased.description')}
           />
-          <FeatureCard
-            icon={<Cpu className="h-12 w-12 mb-4 text-primary" />}
-            title={t('features.multipleBoards.title')}
-            description={t('features.multipleBoards.description')}
-          />
         </div>
       </div>
     </section>
