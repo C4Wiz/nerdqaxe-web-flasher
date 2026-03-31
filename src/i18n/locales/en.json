@@ -12,12 +12,10 @@
     },
     "hero": {
       "title": "Flash your NerdQaxe++ directly from the web",
-      "description": "Connect your device, select your model and board version, and start flashing immediately. No setup required.",
+      "description": "Connect your device, select the version, and start flashing immediately. No setup required.",
       "getStarted": "Get Started",
       "connect": "Connect",
       "disconnect": "Disconnect",
-      "selectDevice": "Select device",
-      "selectBoard": "Select board version",
       "selectFirmware": "Select firmware version",
       "startFlashing": "Start Flashing",
       "flashing": "Flashing...",
@@ -36,22 +34,16 @@
       "webBased": {
         "title": "Web-Based",
         "description": "No need for special software. Use your web browser."
-      },
-      "multipleBoards": {
-        "title": "Multiple Boards",
-        "description": "Support for various Nerd*axe boards and modules."
-      }
     },
     "instructions": {
       "title": "How to Use",
       "steps": {
         "1": "Connect your NerdQaxe++ to your computer.",
         "2": "Click \"Connect Device\" and select your device from the popup.",
-        "3": "Select your device model from the dropdown.",
-        "4": "Choose the appropriate board version.",
-        "5": "Click \"Start Flashing\" to begin the process.",
-        "6": "Wait for the flashing process to complete.",
-        "7": "Disconnect and reset your device."
+        "3": "Choose the appropriate firmware version.",
+        "4": "Click \"Start Flashing\" to begin the process.",
+        "5": "Wait for the flashing process to complete.",
+        "6": "Disconnect and reset your device."
       },
       "moreInfo": "For more detailed instructions, please refer to our",
       "documentation": "documentation"
