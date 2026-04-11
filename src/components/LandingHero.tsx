@@ -283,10 +283,10 @@ export default function LandingHero() {
 
       await loader.main();
 
-      const asset = firmwareData.assets[0];
-const firmwareUrl = asset.browser_download_url;
+      const binaryName = firmwareData.assets[0].name;
+      const firmwareUrl = `${R2_BASE_URL}/${selectedFirmware}/${binaryName}`;
 
-console.log(`Downloading firmware from GitHub: ${firmwareUrl}`);
+      console.log(`Downloading firmware from R2: ${firmwareUrl}`);
 
       // SHA256 is now stored directly in releases.json
       const sha256Hash = firmwareData.sha256 ?? null;
@@ -300,9 +300,9 @@ console.log(`Downloading firmware from GitHub: ${firmwareUrl}`);
       setStatus(t('status.downloadFirmware'));
 
       const firmwareResponse = await fetch(firmwareUrl);
-if (!firmwareResponse.ok) {
-  throw new Error(`Failed to download firmware (status ${firmwareResponse.status})`);
-}
+      if (!firmwareResponse.ok) {
+        throw new Error(`Failed to download firmware from R2 (status ${firmwareResponse.status})`);
+      }
       const firmwareArrayBuffer = await firmwareResponse.arrayBuffer();
 
       if (sha256Hash) {
