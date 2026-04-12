@@ -1,6 +1,7 @@
-[![](https://dcbadge.vercel.app/api/server/3E8ca2dkcC)](https://discord.gg/3E8ca2dkcC)
 
 # NerdQaxe++ Web Flasher
+
+
 
 The NerdQaxe++ Web Flasher is the open source tool that provides you an easy solution to flash a factory file to you NerdQaxe++.
 
