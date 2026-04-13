@@ -1,77 +1,70 @@
 {
     "common": {
-      "theme": "Tema",
-      "language": "Dil",
-      "dark": "Koyu",
-      "light": "Açık"
+        "theme": "Tema",
+        "language": "Dil",
+        "dark": "Karanlık",
+        "light": "Açık"
     },
     "header": {
-      "home": "Ana Sayfa",
-      "features": "Özellikler",
-      "instructions": "Kullanım"
+        "home": "Ana Sayfa",
+        "features": "Özellikler",
+        "instructions": "Talimatlar"
     },
     "hero": {
-      "title": "Nerd*axe Cihazınızı Tarayıcınızdan Formatlayın",
-      "description": "Cihazını bağla, model ve versiyon seç ve formatlamaya hemen başla. Bilgisayara ek kurulum gerektirmez.",
-      "getStarted": "Başlayın",
-      "connect": "Bağla",
-      "disconnect": "Bağlantıyı Kes",
-      "selectDevice": "Cihaz seç",
-      "selectBoard": "Cihaz versiyonu seç",
-      "selectFirmware": "Yazılım versiyonu seç",
-      "startFlashing": "Formatlamaya Başla",
-      "flashing": "Formatlanıyor...",
-      "startLogging": "Loglamaya Başla",
-      "stopLogging": "Loglamayı Durdur",
-      "downloadLogs": "Logu İndir",
-      "loggingDescription": "Cihazınızı seçin, işlemi loglayın ve daha sonra indirin.",
-      "keepConfig": "Yapılandırmayı koru"
+        "title": "NerdQaxe++'ınızı doğrudan web üzerinden flaşlayın",
+        "description": "Cihazınızı bağlayın, sürümü seçin ve hemen flaşlamaya başlayın. Kurulum gerekmez.",
+        "getStarted": "Başlayın",
+        "connect": "Bağlan",
+        "disconnect": "Bağlantıyı Kes",
+        "selectFirmware": "Donanım yazılımı sürümünü seç",
+        "startFlashing": "Flaşlamayı Başlat",
+        "flashing": "Flaşlama...",
+        "startLogging": "Kaydı Başlat",
+        "stopLogging": "Kaydı Durdur",
+        "downloadLogs": "Kayıtları İndir",
+        "loggingDescription": "Cihazınızı bağlayın, seri verileri kaydedin ve daha sonra indirin.",
+        "keepConfig": "Yapılandırmayı Koru"
     },
     "features": {
-      "title": "Öne Çıkan Özellikler",
-      "fastFlashing": {
-        "title": "Hızlı Formatlama",
-        "description": "Nerd*axe cihazınızı saniyeler içinde formatlayın."
-      },
-      "webBased": {
-        "title": "Tarayıcı Tabanlı",
-        "description": "Bilgisayarınıza kurulum gerektirmez, direkt tarayıcınızı kullanın."
-      },
-      "multipleBoards": {
-        "title": "Birden Fazla Versiyon Destekli",
-        "description": "Neredeyse tüm Nerd*axe donanım ve yazılım versiyonlarını destekler."
-      }
+        "title": "Ana Özellikler",
+        "fastFlashing": {
+            "title": "Hızlı Flaşlama",
+            "description": "NerdQaxe++'ınızı saniyeler içinde, dakikalar yerine flaşlayın."
+        },
+        "webBased": {
+            "title": "Web Tabanlı",
+            "description": "Özel bir yazılıma gerek yok. Web tarayıcınızı kullanın."
+        }
     },
     "instructions": {
-      "title": "Nasıl Kullanılır",
-      "steps": {
-        "1": "Nerd*axe cihazınızı bilgisayarınıza bağlayın.",
-        "2": "\"Bağla\" butonuna tıklayın ve çıkan menüden Nerd*axe cihazınızı seçin.",
-        "3": "Cihaz modelini seçin.",
-        "4": "Cihaz versiyonunu seçin.",
-        "5": "Formatı başlatmak için \"Formatlamaya Başla\" butonuna tıklayın.",
-        "6": "Formatlama işleminin tamamlanmasını bekleyin.",
-        "7": "Bağlantıyı kesin ve cihazınızı baştan başlatın."
-      },
-      "moreInfo": "Daha detaylı talimatlara dokümantasyondan ulaşabilirsiniz:",
-      "documentation": "dokümantasyon"
+        "title": "Nasıl Kullanılır",
+        "steps": {
+            "1": "NerdQaxe++'ınızı bilgisayarınıza bağlayın.",
+            "2": "“Cihazı Bağla”ya tıklayın ve açılan pencereden cihazınızı seçin.",
+            "3": "Uygun donanım yazılımı sürümünü seçin.",
+            "4": "İşleme başlamak için “Flaşlamayı Başlat”a tıklayın.",
+            "5": "Flaşlama işleminin tamamlanmasını bekleyin.",
+            "6": "Bağlantıyı kesin ve cihazınızı yeniden başlatın."
+        },
+        "moreInfo": "Daha ayrıntılı talimatlar için lütfen bizim",
+        "documentation": "belgemizi"
     },
     "status": {
-      "connecting": "Cihazınız bağlanıyor...",
-      "connected": "Bağlantı başarılı!",
-      "selectBoth": "Lütfen cihaz modeli ve versiyonunu seçin",
-      "connectFirst": "Lütfen önce cihazınızı bağlayın",
-      "preparing": "Formatlamaya hazırlanıyor...",
-      "flashing": "Formatlanıyor: {{percent}}% tamamlandı",
-      "completed": "Formatlama tamamlandı. Cihaz baştan başlatılıyor...",
-      "success": "Formatlama başarıyla tamamlandı! Cihaz baştan başlatıldı.",
-      "loggingStarted": "Loglama başlatıldı...",
-      "downloadFirmware": "Firmware indiriliyor ve bütünlüğü doğrulanıyor..."
+        "connecting": "Cihaza bağlanıyor...",
+        "connected": "Bağlantı başarılı!",
+        "selectBoth": "Lütfen hem cihaz modelini hem de kart sürümünü seçin",
+        "connectFirst": "Lütfen önce bir cihaza bağlanın",
+        "preparing": "Flaşlamaya hazırlanıyor...",
+        "flashing": "Flaşlama: {{percent}}% tamamlandı",
+        "completed": "Flaşlama tamamlandı. Cihaz yeniden başlatılıyor, lütfen bekleyin...",
+        "success": "Flaşlama başarıyla tamamlandı! Cihaz yeniden başlatıldı.",
+        "loggingStarted": "Seri kayıt başlatıldı...",
+        "downloadFirmware": "Donanım yazılımı indiriliyor ve bütünlüğü doğrulanıyor..."
     },
     "errors": {
-      "browserCompatibility": {
-        "title": "Tarayıcı Uyumluluk Hatası",
-        "description": "Bu uygulama, Chromium tabanlı tarayıcı (Google Chrome, Microsoft Edge veya Brave gibi) gerektirir. Lütfen uyumlu bir tarayıcı ile tekrar deneyin."
-      }
+        "browserCompatibility": {
+            "title": "Tarayıcı Uyumluluğu Hatası",
+            "description": "Bu uygulama düzgün çalışması için Chromium tabanlı bir tarayıcı (Google Chrome, Microsoft Edge veya Brave gibi) gerektirir. Lütfen uyumlu bir tarayıcıya geçin ve tekrar deneyin."
+        }
     }
-  }
+}
