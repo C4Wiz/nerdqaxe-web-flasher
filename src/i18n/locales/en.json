@@ -34,7 +34,7 @@
       "webBased": {
         "title": "Web-Based",
         "description": "No need for special software. Use your web browser."
-    },
+      }
     },
     "instructions": {
       "title": "How to Use",
@@ -67,4 +67,4 @@
         "description": "This application requires a Chromium-based browser (such as Google Chrome, Microsoft Edge, or Brave) to function properly. Please switch to a compatible browser and try again."
       }
     }
-  } 
+}
