@@ -11,7 +11,7 @@ export default function InstructionPanel({ isOpen, onClose }: InstructionPanelPr
   const steps = [1, 2, 3, 4, 5, 6];
 
   return (
-    <div className={`fixed top-[5vh] right-0 max-h-[80vh] w-64 bg-white dark:bg-gray-800 p-4 shadow-lg transform ${isOpen ? 'translate-x-20px' : 'translate-x-full'} transition-transform duration-300 ease-in-out rounded-lg`}>
+    <div className={`fixed top-[5vh] right-0 max-h-[80vh] w-64 bg-white dark:bg-gray-800 p-4 shadow-lg transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out rounded-lg`}>
       <button
         className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
         onClick={onClose}
