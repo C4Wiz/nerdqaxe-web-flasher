@@ -7,70 +7,63 @@
     },
     "header": {
         "home": "Home",
-        "features": "Caratteristiche",
+        "features": "Funzionalità",
         "instructions": "Istruzioni"
     },
     "hero": {
-        "title": "Flasha il tuo NerdQaxe++ direttamente dal Web",
-        "description": "Collega il tuo dispositivo, seleziona il modello e la versione della scheda e inizia subito il flashing. Nessuna configurazione richiesta.",
+        "title": "Flasha il tuo NerdQaxe++ direttamente dal web",
+        "description": "Collega il tuo dispositivo, seleziona la versione e inizia subito il flashing. Nessuna configurazione richiesta.",
         "getStarted": "Inizia",
         "connect": "Connetti",
         "disconnect": "Disconnetti",
-        "selectDevice": "Seleziona dispositivo",
-        "selectBoard": "Seleziona versione scheda",
-        "selectFirmware": "Seleziona versione firmware",
-        "startFlashing": "Inizia flashing",
-        "flashing": "Flash in corso...",
-        "startLogging": "Avvia registrazione Log",
-        "stopLogging": "Ferma registrazione Log",
-        "downloadLogs": "Scarica Log",
-        "loggingDescription": "Collega il tuo dispositivo, registra i dati seriali e scaricali successivamente.",
-        "keepConfig": "Mantieni configurazione"
+        "selectFirmware": "Seleziona la versione del firmware",
+        "startFlashing": "Avvia il Flashing",
+        "flashing": "Flashing...",
+        "startLogging": "Avvia il Logging",
+        "stopLogging": "Ferma il Logging",
+        "downloadLogs": "Scarica i Log",
+        "loggingDescription": "Collega il tuo dispositivo, registra i dati seriali e scaricali in seguito.",
+        "keepConfig": "Mantieni la configurazione"
     },
     "features": {
-        "title": "Caratteristiche principali",
+        "title": "Caratteristiche Principali",
         "fastFlashing": {
-            "title": "Flash rapido",
-            "description": "Flasha il tuo NerdQaxe++ in pochi secondi, non minuti."
+            "title": "Flash Veloce",
+            "description": "Flash il tuo NerdQaxe++ in pochi secondi, non minuti."
         },
         "webBased": {
             "title": "Basato sul Web",
-            "description": "Non necessario alcun software speciale. Usa il tuo browser."
-        },
-        "multipleBoards": {
-            "title": "Schede multiple",
-            "description": "Supporto per varie schede e moduli Nerd*axe."
+            "description": "Nessun software speciale necessario. Usa il tuo browser web."
         }
     },
     "instructions": {
-        "title": "Come utilizzare",
+        "title": "Come Usare",
         "steps": {
             "1": "Collega il tuo NerdQaxe++ al computer.",
-            "2": "Clicca su \"Connetti dispositivo\" e seleziona il tuo dispositivo dal popup.",
-            "3": "Seleziona il modello del dispositivo dal menu a discesa.",
-            "4": "Scegli la versione appropriata della scheda.",
-            "5": "Clicca su \"Inizia flashing\" per avviare il processo.",
-            "6": "Attendi il completamento del processo di flashing.",
-            "7": "Disconnetti e resetta il tuo dispositivo."
+            "2": "Fai clic su \"Connetti Dispositivo\" e seleziona il tuo dispositivo dal pop‑up.",
+            "3": "Scegli la versione del firmware appropriata.",
+            "4": "Fai clic su \"Avvia Flashing\" per iniziare il processo.",
+            "5": "Attendi il completamento del processo di flashing.",
+            "6": "Disconnetti e resetta il tuo dispositivo."
         },
-        "moreInfo": "Per istruzioni pi dettagliate, consulta la nostra",
+        "moreInfo": "Per istruzioni più dettagliate, consulta la nostra",
         "documentation": "documentazione"
     },
     "status": {
-        "connecting": "Connessione al dispositivo in corso...",
+        "connecting": "Connessione al dispositivo...",
         "connected": "Connesso con successo!",
-        "selectBoth": "Seleziona sia il modello del dispositivo che la versione della scheda",
-        "connectFirst": "Collegati prima a un dispositivo",
-        "preparing": "Preparazione per il flashing in corso...",
+        "selectBoth": "Seleziona sia il modello del dispositivo che la versione della board",
+        "connectFirst": "Connetti prima a un dispositivo",
+        "preparing": "Preparazione del flashing...",
         "flashing": "Flashing: {{percent}}% completato",
-        "completed": "Flashing completato. Riavvio del dispositivo...",
-        "success": "Flashing completato con successo! Il dispositivo stato riavviato.",
+        "completed": "Flash completato. Riavvio del dispositivo, attendere...",
+        "success": "Flash completato con successo! Il dispositivo è stato riavviato.",
         "loggingStarted": "Registrazione seriale avviata...",
-        "downloadFirmware": "Download del firmware e verifica della sua integrità..."
+        "downloadFirmware": "Download del firmware e verifica dell'integrità..."
     },
     "errors": {
         "browserCompatibility": {
-            "title": "Errore di compatibilit del browser",
+            "title": "Errore di Compatibilità del Browser",
             "description": "Questa applicazione richiede un browser basato su Chromium (come Google Chrome, Microsoft Edge o Brave) per funzionare correttamente. Passa a un browser compatibile e riprova."
         }
     }
