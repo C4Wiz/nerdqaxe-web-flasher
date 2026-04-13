@@ -8,6 +8,7 @@ interface InstructionPanelProps {
 
 export default function InstructionPanel({ isOpen, onClose }: InstructionPanelProps) {
   const { t } = useTranslation();
+  const steps = [1, 2, 3, 4, 5, 6];
   {steps.map((step) => (
   <li key={step}>{t(`instructions.steps.step${step}`)}</li>
 ))}
