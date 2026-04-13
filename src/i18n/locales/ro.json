@@ -1,77 +1,70 @@
 {
     "common": {
-      "theme": "Temă",
-      "language": "Limbă",
-      "dark": "Întunecat",
-      "light": "Luminos"
+        "theme": "Temă",
+        "language": "Limba",
+        "dark": "Întunecat",
+        "light": "Luminos"
     },
     "header": {
-      "home": "Acasă",
-      "features": "Funcții",
-      "instructions": "Instrucțiuni"
+        "home": "Acasă",
+        "features": "Caracteristici",
+        "instructions": "Instrucțiuni"
     },
     "hero": {
-      "title": "Programează dispozitivul tău Nerd*axe direct de pe Internet",
-      "description": "Conectează dispozitivul, selectează modelul și versiunea plăcii și pornește programarea imediat. Nu este necesară instalare.",
-      "getStarted": "Pornește",
-      "connect": "Conectează",
-      "disconnect": "Deconecteză",
-      "selectDevice": "Selectează dispozitiv",
-      "selectBoard": "Selectează versiunea plăcii",
-      "selectFirmware": "Selectează versiunea software",
-      "startFlashing": "Începe programarea",
-      "flashing": "Programează...",
-      "startLogging": "Pornește logarea",
-      "stopLogging": "Oprește logarea",
-      "downloadLogs": "Descarcă loguri",
-      "loggingDescription": "Conectează aparatul, înregistrează datele de pe comunicarea serială și descarcă mai târziu.",
-      "keepConfig": "Păstrează configurația"
+        "title": "Flashează-ți NerdQaxe++ direct de pe web",
+        "description": "Conectează-ți dispozitivul, selectează versiunea și începe flasharea imediat. Nu este necesară nicio instalare.",
+        "getStarted": "Începe",
+        "connect": "Conectează",
+        "disconnect": "Deconectează",
+        "selectFirmware": "Selectează versiunea firmware-ului",
+        "startFlashing": "Începe flasharea",
+        "flashing": "Flashare...",
+        "startLogging": "Începe înregistrarea",
+        "stopLogging": "Oprește înregistrarea",
+        "downloadLogs": "Descarcă jurnalele",
+        "loggingDescription": "Conectează-ți dispozitivul, înregistrează datele seriale și descarcă-le ulterior.",
+        "keepConfig": "Păstrează configurația"
     },
     "features": {
-      "title": "Funcții importante",
-      "fastFlashing": {
-        "title": "Programare rapidă",
-        "description": "Încarcă software pe Nerd*axe în secunde, nu minute."
-      },
-      "webBased": {
-        "title": "Bazat pe web",
-        "description": "Fără nevoie de software special. Folosește browserul."
-      },
-      "multipleBoards": {
-        "title": "Plăci multiple",
-        "description": "Suport pentru mai multe plăci și module Nerd*axe."
-      }
+        "title": "Funcții cheie",
+        "fastFlashing": {
+            "title": "Flashare rapidă",
+            "description": "Flashuiește-ți NerdQaxe++ în secunde, nu în minute."
+        },
+        "webBased": {
+            "title": "Bazat pe web",
+            "description": "Nu este nevoie de software special. Folosește browserul web."
+        }
     },
     "instructions": {
-      "title": "Instrucțiuni",
-      "steps": {
-        "1": "Conectează Nerd*axe-ul tău la calculator.",
-        "2": "Apasă pe \"Conectare Dispozitiv\" și selectează dispozitivul tău din popup.",
-        "3": "Selectează modelul dispozitivului tău din meniul dropdown.",
-        "4": "Alege versiunea potrivită a plăcii.",
-        "5": "Apasă pe \"Începe Programarea\" pentru a începe procesul.",
-        "6": "Așteaptă ca procesul de programare să se finalizeze.",
-        "7": "Deconectează și resetează dispozitivul tău."
-      },
-      "moreInfo": "Pentru instrucțiuni mai detaliate, te rugăm să consulți",
-      "documentation": "documentația"
+        "title": "Cum să folosești",
+        "steps": {
+            "1": "Conectează-ți NerdQaxe++ la calculator.",
+            "2": "Apasă „Conectează dispozitivul” și selectează dispozitivul din fereastra pop-up.",
+            "3": "Alege versiunea firmware-ului potrivită.",
+            "4": "Apasă „Începe flasharea” pentru a începe procesul.",
+            "5": "Așteaptă finalizarea procesului de flashare.",
+            "6": "Deconectează și resetează dispozitivul."
+        },
+        "moreInfo": "Pentru instrucțiuni detaliate, te rugăm să consulți",
+        "documentation": "documentația"
     },
     "status": {
-      "connecting": "Se conectează la dispozitiv...",
-      "connected": "Conectat cu succes!",
-      "selectBoth": "Te rugăm să selectezi atât modelul dispozitivului cât și versiunea plăcii",
-      "connectFirst": "Te rugăm să te conectezi mai întâi la un dispozitiv",
-      "preparing": "Se pregătește programarea...",
-      "flashing": "Programare: {{percent}}% completat",
-      "completed": "Programare finalizată. Se repornește dispozitivul, te rugăm să aștepți...",
-      "success": "Programare finalizată cu succes! Dispozitivul a fost repornit.",
-      "loggingStarted": "Înregistrarea serială a început...",
-      "downloadFirmware": "Se descarcă firmware-ul și se verifică integritatea acestuia..."
+        "connecting": "Se conectează la dispozitiv...",
+        "connected": "Conectat cu succes!",
+        "selectBoth": "Te rugăm să selectezi atât modelul dispozitivului, cât și versiunea plăcii",
+        "connectFirst": "Te rugăm să te conectezi mai întâi la un dispozitiv",
+        "preparing": "Se pregătește flasharea...",
+        "flashing": "Flashare: {{percent}}% completă",
+        "completed": "Flashare finalizată. Se repornește dispozitivul, te rugăm să aștepți...",
+        "success": "Flashare finalizată cu succes! Dispozitivul a fost repornit.",
+        "loggingStarted": "Înregistrarea serială a început...",
+        "downloadFirmware": "Se descarcă firmware-ul și se verifică integritatea acestuia..."
     },
     "errors": {
-      "browserCompatibility": {
-        "title": "Eroare de Compatibilitate Browser",
-        "description": "Această aplicație necesită un browser bazat pe Chromium (precum Google Chrome, Microsoft Edge, sau Brave) pentru a funcționa corect. Te rugăm să treci la un browser compatibil și să încerci din nou."
-      }
+        "browserCompatibility": {
+            "title": "Eroare de compatibilitate a browserului",
+            "description": "Această aplicație necesită un browser bazat pe Chromium (cum ar fi Google Chrome, Microsoft Edge sau Brave) pentru a funcționa corect. Te rugăm să treci la un browser compatibil și să încerci din nou."
+        }
     }
-  }
+}
