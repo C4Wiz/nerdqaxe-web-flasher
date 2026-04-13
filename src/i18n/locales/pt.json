@@ -1,57 +1,50 @@
 {
     "common": {
       "theme": "Tema",
-      "language": "Língua",
+      "language": "Idioma",
       "dark": "Escuro",
       "light": "Claro"
     },
     "header": {
-      "home": "Home",
+      "home": "Início",
       "features": "Recursos",
       "instructions": "Instruções"
     },
     "hero": {
-      "title": "Grave Seu NerdQaxe++ Diretamente da Web",
-      "description": "Conecte seu dispositivo, selecione seu modelo e versão da placa, e inicie a gravação imediatamente. Nenhuma configuração necessária.",
+      "title": "Flash seu NerdQaxe++ diretamente da web",
+      "description": "Conecte seu dispositivo, selecione a versão e comece a flashar imediatamente. Nenhuma configuração necessária.",
       "getStarted": "Começar",
       "connect": "Conectar",
       "disconnect": "Desconectar",
-      "selectDevice": "Selecionar dispositivo",
-      "selectBoard": "Selecionar versão da placa",
       "selectFirmware": "Selecionar versão do firmware",
-      "startFlashing": "Iniciar Gravação",
-      "flashing": "Gravando...",
-      "startLogging": "Iniciar Log",
-      "stopLogging": "Parar Log",
+      "startFlashing": "Iniciar Flash",
+      "flashing": "Flasheando...",
+      "startLogging": "Iniciar Registro",
+      "stopLogging": "Parar Registro",
       "downloadLogs": "Baixar Logs",
-      "loggingDescription": "Conecte seu dispositivo, registre os dados seriais e baixe-os posteriormente.",
+      "loggingDescription": "Conecte seu dispositivo, registre os dados seriais e baixe-os depois.",
       "keepConfig": "Manter configuração"
     },
     "features": {
       "title": "Principais Recursos",
       "fastFlashing": {
-        "title": "Gravação Rápida",
-        "description": "Grave seu NerdQaxe++ em segundos, não minutos."
+        "title": "Flash Rápido",
+        "description": "Flash seu NerdQaxe++ em segundos, não minutos."
       },
       "webBased": {
         "title": "Baseado na Web",
-        "description": "Não é necessário software especial. Use seu navegador."
-      },
-      "multipleBoards": {
-        "title": "Múltiplas Placas",
-        "description": "Suporte para várias placas e módulos Nerd*axe."
+        "description": "Não precisa de software especial. Use seu navegador."
       }
     },
     "instructions": {
       "title": "Como Usar",
       "steps": {
         "1": "Conecte seu NerdQaxe++ ao computador.",
-        "2": "Clique em \"Conectar Dispositivo\" e selecione seu dispositivo na janela pop-up.",
-        "3": "Selecione o modelo do dispositivo no menu suspenso.",
-        "4": "Escolha a versão apropriada da placa.",
-        "5": "Clique em \"Iniciar Gravação\" para começar o processo.",
-        "6": "Aguarde até o processo de gravação ser concluído.",
-        "7": "Desconecte e reinicie seu dispositivo."
+        "2": "Clique em \"Conectar Dispositivo\" e selecione seu dispositivo na janela que aparecer.",
+        "3": "Escolha a versão de firmware apropriada.",
+        "4": "Clique em \"Iniciar Flash\" para começar o processo.",
+        "5": "Aguarde a conclusão do processo de flash.",
+        "6": "Desconecte e reinicie seu dispositivo."
       },
       "moreInfo": "Para instruções mais detalhadas, consulte nossa",
       "documentation": "documentação"
@@ -59,19 +52,19 @@
     "status": {
       "connecting": "Conectando ao dispositivo...",
       "connected": "Conectado com sucesso!",
-      "selectBoth": "Por favor, selecione o modelo do dispositivo e a versão da placa",
-      "connectFirst": "Por favor, conecte-se a um dispositivo primeiro",
-      "preparing": "Preparando para gravar...",
-      "flashing": "Gravando: {{percent}}% concluído",
-      "completed": "Gravação concluída. Reiniciando o dispositivo...",
-      "success": "Gravação concluída com sucesso! O dispositivo foi reiniciado.",
-      "loggingStarted": "Log serial iniciado...",
-      "downloadFirmware": "Baixando o firmware e verificando sua integridade..."
+      "selectBoth": "Por favor, selecione tanto o modelo do dispositivo quanto a versão da placa",
+      "connectFirst": "Por favor, conecte a um dispositivo primeiro",
+      "preparing": "Preparando para flash...",
+      "flashing": "Flashing: {{percent}}% concluído",
+      "completed": "Flash concluído. Reiniciando o dispositivo, aguarde...",
+      "success": "Flash concluído com sucesso! O dispositivo foi reiniciado.",
+      "loggingStarted": "Registro serial iniciado...",
+      "downloadFirmware": "Baixando firmware e verificando sua integridade..."
     },
     "errors": {
       "browserCompatibility": {
         "title": "Erro de Compatibilidade do Navegador",
-        "description": "Este aplicativo requer um navegador baseado no Chromium (como Google Chrome, Microsoft Edge ou Brave) para funcionar corretamente. Por favor, mude para um navegador compatível e tente novamente."
+        "description": "Este aplicativo requer um navegador baseado em Chromium (como Google Chrome, Microsoft Edge ou Brave) para funcionar corretamente. Por favor, troque para um navegador compatível e tente novamente."
       }
     }
 }
