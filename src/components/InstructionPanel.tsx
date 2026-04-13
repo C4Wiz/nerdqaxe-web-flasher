@@ -8,7 +8,9 @@ interface InstructionPanelProps {
 
 export default function InstructionPanel({ isOpen, onClose }: InstructionPanelProps) {
   const { t } = useTranslation();
-  const steps = [1, 2, 3, 4, 5, 6];
+  {steps.map((step) => (
+  <li key={step}>{t(`instructions.steps.step${step}`)}</li>
+))}
 
   return (
     <div className={`fixed top-[5vh] right-0 max-h-[80vh] w-64 bg-white dark:bg-gray-800 p-4 shadow-lg transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out rounded-lg`}>
