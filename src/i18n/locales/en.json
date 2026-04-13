@@ -38,12 +38,12 @@
     "instructions": {
       "title": "How to Use",
       "steps": {
-        "1": "Connect your NerdQaxe++ to your computer.",
-        "2": "Click \"Connect Device\" and select your device from the popup.",
-        "3": "Choose the appropriate firmware version.",
-        "4": "Click \"Start Flashing\" to begin the process.",
-        "5": "Wait for the flashing process to complete.",
-        "6": "Disconnect and reset your device."
+        "step1": "Connect your NerdQaxe++ to your computer.",
+        "step2": "Click \"Connect Device\" and select your device from the popup.",
+        "step3": "Choose the appropriate firmware version.",
+        "step4": "Click \"Start Flashing\" to begin the process.",
+        "step5": "Wait for the flashing process to complete.",
+        "step6": "Disconnect and reset your device."
       },
       "moreInfo": "For more detailed instructions, please refer to our",
       "documentation": "documentation"
