@@ -9,7 +9,6 @@ import ru from './locales/ru.json';
 import tr from './locales/tr.json';
 import sk from './locales/sk.json';
 import it from './locales/it.json';
-import tlh from './locales/tlh.json';
 import ro from './locales/ro.json';
 
 i18n
@@ -20,7 +19,6 @@ i18n
       en: { translation: en },
       de: { translation: de },
       it: { translation: it },
-      tlh: { translation: tlh },
       pt: { translation: pt },
       ru: { translation: ru },
       tr: { translation: tr },
