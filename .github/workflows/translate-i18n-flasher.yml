@@ -22,7 +22,7 @@ jobs:
         CONFIG_FILE="src/i18n/config.ts"
 
         # Extract language codes from import statements, exclude 'en'
-        LANG_CODES=$(grep -oP "^import \K[a-z]+" "$CONFIG_FILE" | grep -v '^i18n$' | grep -v '^en$' | tr '\n' ' ')
+        LANG_CODES=$(grep -oP "^import \K[a-z]{2}(?= from './locales/)" "$CONFIG_FILE" | grep -v '^en$' | tr '\n' ' ')
         echo "Detected language codes: $LANG_CODES"
         echo "LANG_CODES=$LANG_CODES" >> $GITHUB_ENV
 
