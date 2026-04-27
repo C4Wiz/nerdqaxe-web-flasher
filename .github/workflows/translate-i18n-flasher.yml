@@ -63,7 +63,7 @@ jobs:
               }'
             )")
 
-          TRANSLATED=$(echo "$RESPONSE" | jq -r '.content[0].text')
+          TRANSLATED=$(echo "$RESPONSE" | jq -r '.content[0].text' | sed 's/^```json\s*//;s/^```\s*//;s/```\s*$//')
 
           if [ -z "$TRANSLATED" ] || [ "$TRANSLATED" == "null" ]; then
             echo "ERROR: Failed to translate to $LANG"
