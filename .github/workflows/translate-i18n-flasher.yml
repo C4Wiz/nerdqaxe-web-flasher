@@ -1,120 +1,93 @@
----
 name: Translate i18n Files
+
 on:
-  workflow_dispatch: null
+  workflow_dispatch:
   push:
     paths:
-      - src/i18n/locales/en.json
-      - src/i18n/config.ts
+      - 'src/i18n/locales/en.json'
+      - 'src/i18n/config.ts'
+
 jobs:
   translate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: sudo apt-get install -y jq curl
-      - name: Parse supported languages from config.ts
-        run: >
-          CONFIG_FILE="src/i18n/config.ts"
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
+    - name: Install dependencies
+      run: sudo apt-get install -y jq curl
 
-          # Extract language codes from import statements, exclude 'en'
+    - name: Parse supported languages from config.ts
+      run: |
+        CONFIG_FILE="src/i18n/config.ts"
+        LANG_CODES=$(grep -oP "^import \K[a-z]{2}(?= from './locales/)" "$CONFIG_FILE" | grep -v '^en$' | tr '\n' ' ')
+        echo "Detected language codes: $LANG_CODES"
+        echo "LANG_CODES=$LANG_CODES" >> $GITHUB_ENV
 
-          LANG_CODES=$(grep -oP "^import \K[a-z]{2}(?= from './locales/)" "$CONFIG_FILE" | grep -v '^en$' | tr '\n' ' ')
+    - name: Translate to all languages
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      run: |
+        EN_FILE="src/i18n/locales/en.json"
+        EN_CONTENT=$(cat "$EN_FILE")
 
-          echo "Detected language codes: $LANG_CODES"
+        for CODE in ${{ env.LANG_CODES }}; do
 
-          echo "LANG_CODES=$LANG_CODES" >> $GITHUB_ENV
-      - name: Translate to all languages
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: >
-          EN_FILE="src/i18n/locales/en.json"
+          case "$CODE" in
+            *)  LANG="$CODE" ;;
+          esac
 
-          EN_CONTENT=$(cat "$EN_FILE")
+          TARGET_FILE="src/i18n/locales/${CODE}.json"
+          echo "Translating to $LANG ($CODE)..."
 
-
-          for CODE in ${{ env.LANG_CODES }}; do
-
-            # Map known codes to full names; fallback to the code itself for unknown codes
-            case "$CODE" in
-              de) LANG="German" ;;
-              fr) LANG="French" ;;
-              es) LANG="Spanish" ;;
-              it) LANG="Italian" ;;
-              ja) LANG="Japanese" ;;
-              pt) LANG="Portuguese" ;;
-              ro) LANG="Romanian" ;;
-              ru) LANG="Russian" ;;
-              sk) LANG="Slovak" ;;
-              sv) LANG="Swedish" ;;
-              tr) LANG="Turkish" ;;
-              zh) LANG="Chinese (Simplified)" ;;
-              *)  LANG="$CODE" ;;
-            esac
-
-            TARGET_FILE="src/i18n/locales/${CODE}.json"
-            echo "Translating to $LANG ($CODE)..."
-
-            # Build existing file content for context if it exists
-            EXISTING_PROMPT=""
-            if [ -f "$TARGET_FILE" ]; then
-              EXISTING=$(cat "$TARGET_FILE")
-              EXISTING_PROMPT="Here is the existing $LANG translation file for reference (keep any existing translations that are still valid, only add or update missing/changed keys):\n\`\`\`json\n${EXISTING}\n\`\`\`\n\n"
-            fi
-
-            PROMPT="${EXISTING_PROMPT}Translate the following JSON i18n file from English to ${LANG}. Rules:\n- Keep all JSON keys exactly as-is\n- Only translate the string values\n- Keep placeholders like {{percent}}, {{variable}} etc unchanged\n- Keep technical terms like 'NerdQaxe++', 'Chromium', 'Chrome', 'Edge', 'Brave' unchanged\n- Keep URLs unchanged\n- Do NOT use curly/smart quotes like \u201c \u201d \u2018 \u2019 in the output, use only straight ASCII quotes\n- Return only valid JSON, no markdown, no explanation, no backticks\n\nEnglish source:\n${EN_CONTENT}"
-
-            RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
-              -H "x-api-key: ${ANTHROPIC_API_KEY}" \
-              -H "anthropic-version: 2023-06-01" \
-              -H "content-type: application/json" \
-              -d "$(jq -n \
-                --arg model "claude-sonnet-4-5" \
-                --arg prompt "$PROMPT" \
-                '{
-                  model: $model,
-                  max_tokens: 8192,
-                  messages: [{role: "user", content: $prompt}]
-                }'
-              )")
-
-            TRANSLATED=$(echo "$RESPONSE" | jq -r '.content[0].text' | sed 's/^```json[[:space:]]*//;s/^```[[:space:]]*//;s/```[[:space:]]*$//' | python3 -c "import sys; text = sys.stdin.read(); text = text.replace('\u201c', '\\\\\"').replace('\u201d', '\\\\\"').replace('\u2018', \"\\\\'\").replace('\u2019', \"\\\\'\"); print(text, end='')")
-
-            if [ -z "$TRANSLATED" ] || [ "$TRANSLATED" == "null" ]; then
-              echo "ERROR: Failed to translate to $LANG"
-              echo "Response: $RESPONSE"
-              exit 1
-            fi
-
-            # Validate it's valid JSON before writing
-            if echo "$TRANSLATED" | jq empty 2>/dev/null; then
-              echo "$TRANSLATED" > "$TARGET_FILE"
-              echo "✓ Written $TARGET_FILE"
-            else
-              echo "ERROR: Invalid JSON returned for $LANG"
-              echo "$TRANSLATED"
-              exit 1
-            fi
-
-            # Small delay to avoid rate limiting
-            sleep 2
-          done
-      - name: Commit and push translations
-        run: >
-          git config --local user.email
-          "github-actions[bot]@users.noreply.github.com"
-
-          git config --local user.name "github-actions[bot]"
-
-          git add src/i18n/locales/*.json
-
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "chore: update i18n translations [skip ci]"
-            git push
+          EXISTING_PROMPT=""
+          if [ -f "$TARGET_FILE" ]; then
+            EXISTING=$(cat "$TARGET_FILE")
+            EXISTING_PROMPT="Here is the existing $LANG translation file for reference (keep any existing translations that are still valid, only add or update missing/changed keys):\n\`\`\`json\n${EXISTING}\n\`\`\`\n\n"
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          PROMPT="${EXISTING_PROMPT}Translate the following JSON i18n file from English to ${LANG}. Rules:\n- Keep all JSON keys exactly as-is\n- Only translate the string values\n- Keep placeholders like {{percent}}, {{variable}} etc unchanged\n- Keep technical terms like 'NerdQaxe++', 'Chromium', 'Chrome', 'Edge', 'Brave' unchanged\n- Keep URLs unchanged\n- Do NOT use curly/smart quotes like \u201c \u201d \u2018 \u2019 in the output, use only straight ASCII quotes\n- Return only valid JSON, no markdown, no explanation, no backticks\n\nEnglish source:\n${EN_CONTENT}"
+
+          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "x-api-key: ${ANTHROPIC_API_KEY}" \
+            -H "anthropic-version: 2023-06-01" \
+            -H "content-type: application/json" \
+            -d "$(jq -n \
+              --arg model "claude-sonnet-4-5" \
+              --arg prompt "$PROMPT" \
+              '{model: $model, max_tokens: 8192, messages: [{role: "user", content: $prompt}]}'
+            )")
+
+          TRANSLATED=$(echo "$RESPONSE" | jq -r '.content[0].text' | sed 's/^```json[[:space:]]*//;s/^```[[:space:]]*//;s/```[[:space:]]*$//' | python3 -c "import sys; text = sys.stdin.read(); text = text.replace('\u201c', '\\\\\"').replace('\u201d', '\\\\\"').replace('\u2018', \"\\\\'\").replace('\u2019', \"\\\\'\"); print(text, end='')")
+
+          if [ -z "$TRANSLATED" ] || [ "$TRANSLATED" == "null" ]; then
+            echo "ERROR: Failed to translate to $LANG"
+            echo "Response: $RESPONSE"
+            exit 1
+          fi
+
+          if echo "$TRANSLATED" | jq empty 2>/dev/null; then
+            echo "$TRANSLATED" > "$TARGET_FILE"
+            echo "✓ Written $TARGET_FILE"
+          else
+            echo "ERROR: Invalid JSON returned for $LANG"
+            echo "$TRANSLATED"
+            exit 1
+          fi
+
+          sleep 2
+        done
+
+    - name: Commit and push translations
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add src/i18n/locales/*.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore: update i18n translations [skip ci]"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
