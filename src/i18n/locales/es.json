@@ -1,0 +1,71 @@
+
+{
+    "common": {
+      "theme": "Tema",
+      "language": "Idioma",
+      "dark": "Oscuro",
+      "light": "Claro"
+    },
+    "header": {
+      "home": "Inicio",
+      "features": "Características",
+      "instructions": "Instrucciones"
+    },
+    "hero": {
+      "title": "Flashea tu NerdQaxe++ directamente desde la web",
+      "description": "Conecta tu dispositivo, selecciona la versión y comienza a flashear inmediatamente. No requiere configuración.",
+      "getStarted": "Comenzar",
+      "connect": "Conectar",
+      "disconnect": "Desconectar",
+      "selectFirmware": "Seleccionar versión de firmware",
+      "startFlashing": "Comenzar Flasheo",
+      "flashing": "Flasheando...",
+      "startLogging": "Iniciar Registro",
+      "stopLogging": "Detener Registro",
+      "downloadLogs": "Descargar Registros",
+      "loggingDescription": "Conecta tu dispositivo, registra los datos seriales y descárgalos más tarde.",
+      "keepConfig": "Mantener configuración"
+    },
+    "features": {
+      "title": "Características Principales",
+      "fastFlashing": {
+        "title": "Flasheo Rápido",
+        "description": "Flashea tu NerdQaxe++ en segundos, no minutos."
+      },
+      "webBased": {
+        "title": "Basado en Web",
+        "description": "No necesitas software especial. Usa tu navegador web."
+      }
+    },
+    "instructions": {
+      "title": "Cómo Usar",
+      "steps": {
+        "1": "Conecta tu NerdQaxe++ a tu computadora.",
+        "2": "Haz clic en \"Conectar Dispositivo\" y selecciona tu dispositivo en la ventana emergente.",
+        "3": "Elige la versión de firmware apropiada.",
+        "4": "Haz clic en \"Comenzar Flasheo\" para iniciar el proceso.",
+        "5": "Espera a que el proceso de flasheo se complete.",
+        "6": "Desconecta y reinicia tu dispositivo."
+      },
+      "moreInfo": "Para instrucciones más detalladas, por favor consulta nuestra",
+      "documentation": "documentación"
+    },
+    "status": {
+      "connecting": "Conectando al dispositivo...",
+      "connected": "¡Conectado exitosamente!",
+      "selectBoth": "Por favor selecciona tanto el modelo del dispositivo como la versión de la placa",
+      "connectFirst": "Por favor conecta primero un dispositivo",
+      "preparing": "Preparando para flashear...",
+      "flashing": "Flasheando: {{percent}}% completado",
+      "completed": "Flasheo completado. Reiniciando dispositivo, por favor espera...",
+      "success": "¡Flasheo completado exitosamente! El dispositivo ha sido reiniciado.",
+      "loggingStarted": "Registro serial iniciado...",
+      "downloadFirmware": "Descargando firmware y verificando su integridad..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "Error de Compatibilidad del Navegador",
+        "description": "Esta aplicación requiere un navegador basado en Chromium (como Google Chrome, Microsoft Edge o Brave) para funcionar correctamente. Por favor cambia a un navegador compatible e intenta nuevamente."
+      }
+    }
+}

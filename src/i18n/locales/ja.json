@@ -1,0 +1,71 @@
+
+{
+    "common": {
+      "theme": "テーマ",
+      "language": "言語",
+      "dark": "ダーク",
+      "light": "ライト"
+    },
+    "header": {
+      "home": "ホーム",
+      "features": "機能",
+      "instructions": "使い方"
+    },
+    "hero": {
+      "title": "NerdQaxe++をウェブから直接フラッシュ",
+      "description": "デバイスを接続し、バージョンを選択して、すぐにフラッシュを開始できます。セットアップは不要です。",
+      "getStarted": "始める",
+      "connect": "接続",
+      "disconnect": "切断",
+      "selectFirmware": "ファームウェアバージョンを選択",
+      "startFlashing": "フラッシュ開始",
+      "flashing": "フラッシュ中...",
+      "startLogging": "ログ記録開始",
+      "stopLogging": "ログ記録停止",
+      "downloadLogs": "ログをダウンロード",
+      "loggingDescription": "デバイスを接続し、シリアルデータをログに記録して、後でダウンロードできます。",
+      "keepConfig": "設定を保持"
+    },
+    "features": {
+      "title": "主な機能",
+      "fastFlashing": {
+        "title": "高速フラッシュ",
+        "description": "NerdQaxe++を数分ではなく、数秒でフラッシュできます。"
+      },
+      "webBased": {
+        "title": "ウェブベース",
+        "description": "特別なソフトウェアは不要です。ウェブブラウザを使用できます。"
+      }
+    },
+    "instructions": {
+      "title": "使い方",
+      "steps": {
+        "1": "NerdQaxe++をコンピュータに接続します。",
+        "2": "「接続」をクリックし、ポップアップからデバイスを選択します。",
+        "3": "適切なファームウェアバージョンを選択します。",
+        "4": "「フラッシュ開始」をクリックしてプロセスを開始します。",
+        "5": "フラッシュプロセスが完了するまで待ちます。",
+        "6": "デバイスを切断してリセットします。"
+      },
+      "moreInfo": "より詳細な手順については、以下をご参照ください",
+      "documentation": "ドキュメント"
+    },
+    "status": {
+      "connecting": "デバイスに接続中...",
+      "connected": "接続に成功しました!",
+      "selectBoth": "デバイスモデルとボードバージョンの両方を選択してください",
+      "connectFirst": "最初にデバイスに接続してください",
+      "preparing": "フラッシュの準備中...",
+      "flashing": "フラッシュ中: {{percent}}%完了",
+      "completed": "フラッシュが完了しました。デバイスを再起動中です。お待ちください...",
+      "success": "フラッシュが正常に完了しました!デバイスが再起動されました。",
+      "loggingStarted": "シリアルログ記録を開始しました...",
+      "downloadFirmware": "ファームウェアをダウンロードし、整合性を検証中..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "ブラウザ互換性エラー",
+        "description": "このアプリケーションを正しく動作させるには、Chromiumベースのブラウザ(Google Chrome、Microsoft Edge、Braveなど)が必要です。互換性のあるブラウザに切り替えて、再度お試しください。"
+      }
+    }
+}

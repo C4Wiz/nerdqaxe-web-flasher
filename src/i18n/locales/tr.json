@@ -1,3 +1,4 @@
+
 {
     "common": {
         "theme": "Tema",
@@ -40,9 +41,9 @@
         "title": "Nasıl Kullanılır",
         "steps": {
             "1": "NerdQaxe++'ınızı bilgisayarınıza bağlayın.",
-            "2": "“Cihazı Bağla”ya tıklayın ve açılan pencereden cihazınızı seçin.",
+            "2": "\"Bağlan\"a tıklayın ve açılan pencereden cihazınızı seçin.",
             "3": "Uygun donanım yazılımı sürümünü seçin.",
-            "4": "İşleme başlamak için “Flaşlamayı Başlat”a tıklayın.",
+            "4": "İşleme başlamak için \"Flaşlamayı Başlat\"a tıklayın.",
             "5": "Flaşlama işleminin tamamlanmasını bekleyin.",
             "6": "Bağlantıyı kesin ve cihazınızı yeniden başlatın."
         },

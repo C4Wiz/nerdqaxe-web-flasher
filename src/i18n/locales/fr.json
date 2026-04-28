@@ -1,0 +1,71 @@
+
+{
+    "common": {
+      "theme": "Thème",
+      "language": "Langue",
+      "dark": "Sombre",
+      "light": "Clair"
+    },
+    "header": {
+      "home": "Accueil",
+      "features": "Fonctionnalités",
+      "instructions": "Instructions"
+    },
+    "hero": {
+      "title": "Flashez votre NerdQaxe++ directement depuis le web",
+      "description": "Connectez votre appareil, sélectionnez la version et commencez à flasher immédiatement. Aucune configuration requise.",
+      "getStarted": "Commencer",
+      "connect": "Connecter",
+      "disconnect": "Déconnecter",
+      "selectFirmware": "Sélectionner la version du firmware",
+      "startFlashing": "Démarrer le flashage",
+      "flashing": "Flashage en cours...",
+      "startLogging": "Démarrer la journalisation",
+      "stopLogging": "Arrêter la journalisation",
+      "downloadLogs": "Télécharger les journaux",
+      "loggingDescription": "Connectez votre appareil, enregistrez les données série et téléchargez-les ultérieurement.",
+      "keepConfig": "Conserver la configuration"
+    },
+    "features": {
+      "title": "Fonctionnalités principales",
+      "fastFlashing": {
+        "title": "Flashage rapide",
+        "description": "Flashez votre NerdQaxe++ en quelques secondes, pas en minutes."
+      },
+      "webBased": {
+        "title": "Basé sur le web",
+        "description": "Pas besoin de logiciel spécial. Utilisez votre navigateur web."
+      }
+    },
+    "instructions": {
+      "title": "Comment utiliser",
+      "steps": {
+        "1": "Connectez votre NerdQaxe++ à votre ordinateur.",
+        "2": "Cliquez sur \"Connecter l'appareil\" et sélectionnez votre appareil dans la fenêtre contextuelle.",
+        "3": "Choisissez la version du firmware appropriée.",
+        "4": "Cliquez sur \"Démarrer le flashage\" pour commencer le processus.",
+        "5": "Attendez que le processus de flashage se termine.",
+        "6": "Déconnectez et réinitialisez votre appareil."
+      },
+      "moreInfo": "Pour des instructions plus détaillées, veuillez consulter notre",
+      "documentation": "documentation"
+    },
+    "status": {
+      "connecting": "Connexion à l'appareil...",
+      "connected": "Connecté avec succès !",
+      "selectBoth": "Veuillez sélectionner à la fois le modèle d'appareil et la version de la carte",
+      "connectFirst": "Veuillez d'abord vous connecter à un appareil",
+      "preparing": "Préparation du flashage...",
+      "flashing": "Flashage : {{percent}}% terminé",
+      "completed": "Flashage terminé. Redémarrage de l'appareil, veuillez patienter...",
+      "success": "Flashage terminé avec succès ! L'appareil a été redémarré.",
+      "loggingStarted": "Journalisation série démarrée...",
+      "downloadFirmware": "Téléchargement du firmware et vérification de son intégrité..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "Erreur de compatibilité du navigateur",
+        "description": "Cette application nécessite un navigateur basé sur Chromium (tel que Google Chrome, Microsoft Edge ou Brave) pour fonctionner correctement. Veuillez passer à un navigateur compatible et réessayer."
+      }
+    }
+}

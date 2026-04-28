@@ -1,0 +1,71 @@
+
+{
+    "common": {
+      "theme": "Tema",
+      "language": "Språk",
+      "dark": "Mörk",
+      "light": "Ljus"
+    },
+    "header": {
+      "home": "Hem",
+      "features": "Funktioner",
+      "instructions": "Instruktioner"
+    },
+    "hero": {
+      "title": "Flasha din NerdQaxe++ direkt från webben",
+      "description": "Anslut din enhet, välj version och börja flasha omedelbart. Ingen installation krävs.",
+      "getStarted": "Kom igång",
+      "connect": "Anslut",
+      "disconnect": "Koppla från",
+      "selectFirmware": "Välj firmware-version",
+      "startFlashing": "Börja flasha",
+      "flashing": "Flashar...",
+      "startLogging": "Starta loggning",
+      "stopLogging": "Stoppa loggning",
+      "downloadLogs": "Ladda ner loggar",
+      "loggingDescription": "Anslut din enhet, logga seriell data och ladda ner den senare.",
+      "keepConfig": "Behåll konfiguration"
+    },
+    "features": {
+      "title": "Nyckelfunktioner",
+      "fastFlashing": {
+        "title": "Snabb flashning",
+        "description": "Flasha din NerdQaxe++ på sekunder, inte minuter."
+      },
+      "webBased": {
+        "title": "Webbaserad",
+        "description": "Ingen speciell programvara behövs. Använd din webbläsare."
+      }
+    },
+    "instructions": {
+      "title": "Hur man använder",
+      "steps": {
+        "1": "Anslut din NerdQaxe++ till din dator.",
+        "2": "Klicka på \"Anslut enhet\" och välj din enhet från popup-fönstret.",
+        "3": "Välj lämplig firmware-version.",
+        "4": "Klicka på \"Börja flasha\" för att påbörja processen.",
+        "5": "Vänta tills flashningsprocessen är klar.",
+        "6": "Koppla från och återställ din enhet."
+      },
+      "moreInfo": "För mer detaljerade instruktioner, vänligen se vår",
+      "documentation": "dokumentation"
+    },
+    "status": {
+      "connecting": "Ansluter till enhet...",
+      "connected": "Ansluten!",
+      "selectBoth": "Vänligen välj både enhetsmodell och kortversion",
+      "connectFirst": "Vänligen anslut till en enhet först",
+      "preparing": "Förbereder flashning...",
+      "flashing": "Flashar: {{percent}}% klart",
+      "completed": "Flashning slutförd. Startar om enheten, vänligen vänta...",
+      "success": "Flashning slutförd! Enheten har startats om.",
+      "loggingStarted": "Seriell loggning startad...",
+      "downloadFirmware": "Laddar ner firmware och verifierar dess integritet..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "Webbläsarkompatibilitetsfel",
+        "description": "Denna applikation kräver en Chromium-baserad webbläsare (såsom Google Chrome, Microsoft Edge eller Brave) för att fungera korrekt. Vänligen byt till en kompatibel webbläsare och försök igen."
+      }
+    }
+}

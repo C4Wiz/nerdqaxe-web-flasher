@@ -1,0 +1,71 @@
+
+{
+    "common": {
+      "theme": "主题",
+      "language": "语言",
+      "dark": "深色",
+      "light": "浅色"
+    },
+    "header": {
+      "home": "首页",
+      "features": "功能特性",
+      "instructions": "使用说明"
+    },
+    "hero": {
+      "title": "直接从网页刷写您的 NerdQaxe++",
+      "description": "连接您的设备，选择版本，立即开始刷写。无需设置。",
+      "getStarted": "开始使用",
+      "connect": "连接",
+      "disconnect": "断开连接",
+      "selectFirmware": "选择固件版本",
+      "startFlashing": "开始刷写",
+      "flashing": "刷写中...",
+      "startLogging": "开始日志记录",
+      "stopLogging": "停止日志记录",
+      "downloadLogs": "下载日志",
+      "loggingDescription": "连接您的设备，记录串口数据并稍后下载。",
+      "keepConfig": "保留配置"
+    },
+    "features": {
+      "title": "主要功能",
+      "fastFlashing": {
+        "title": "快速刷写",
+        "description": "在几秒钟内刷写您的 NerdQaxe++，而不是几分钟。"
+      },
+      "webBased": {
+        "title": "基于网页",
+        "description": "无需特殊软件。使用您的网页浏览器即可。"
+      }
+    },
+    "instructions": {
+      "title": "使用方法",
+      "steps": {
+        "1": "将您的 NerdQaxe++ 连接到计算机。",
+        "2": "点击\"连接设备\"并从弹出窗口中选择您的设备。",
+        "3": "选择适当的固件版本。",
+        "4": "点击\"开始刷写\"以开始该过程。",
+        "5": "等待刷写过程完成。",
+        "6": "断开连接并重置您的设备。"
+      },
+      "moreInfo": "有关更详细的说明，请参阅我们的",
+      "documentation": "文档"
+    },
+    "status": {
+      "connecting": "正在连接设备...",
+      "connected": "连接成功！",
+      "selectBoth": "请同时选择设备型号和主板版本",
+      "connectFirst": "请先连接设备",
+      "preparing": "准备刷写...",
+      "flashing": "刷写中：{{percent}}% 完成",
+      "completed": "刷写完成。正在重启设备，请稍候...",
+      "success": "刷写成功完成！设备已重启。",
+      "loggingStarted": "串口日志记录已开始...",
+      "downloadFirmware": "正在下载固件并验证其完整性..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "浏览器兼容性错误",
+        "description": "此应用程序需要基于 Chromium 的浏览器（如 Google Chrome、Microsoft Edge 或 Brave）才能正常运行。请切换到兼容的浏览器并重试。"
+      }
+    }
+}

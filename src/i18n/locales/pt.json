@@ -1,3 +1,4 @@
+
 {
     "common": {
       "theme": "Tema",
@@ -40,7 +41,7 @@
       "title": "Como Usar",
       "steps": {
         "1": "Conecte seu NerdQaxe++ ao computador.",
-        "2": "Clique em \"Conectar Dispositivo\" e selecione seu dispositivo na janela que aparecer.",
+        "2": "Clique em \"Conectar\" e selecione seu dispositivo na janela que aparecer.",
         "3": "Escolha a versão de firmware apropriada.",
         "4": "Clique em \"Iniciar Flash\" para começar o processo.",
         "5": "Aguarde a conclusão do processo de flash.",

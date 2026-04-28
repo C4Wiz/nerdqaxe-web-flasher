@@ -1,3 +1,4 @@
+
 {
     "common": {
         "theme": "Temă",
@@ -40,9 +41,9 @@
         "title": "Cum să folosești",
         "steps": {
             "1": "Conectează-ți NerdQaxe++ la calculator.",
-            "2": "Apasă „Conectează dispozitivul” și selectează dispozitivul din fereastra pop-up.",
+            "2": "Apasă \"Conectează dispozitivul\" și selectează dispozitivul din fereastra pop-up.",
             "3": "Alege versiunea firmware-ului potrivită.",
-            "4": "Apasă „Începe flasharea” pentru a începe procesul.",
+            "4": "Apasă \"Începe flasharea\" pentru a începe procesul.",
             "5": "Așteaptă finalizarea procesului de flashare.",
             "6": "Deconectează și resetează dispozitivul."
         },

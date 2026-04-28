@@ -1,3 +1,4 @@
+
 {
     "common": {
         "theme": "Tema",
@@ -40,7 +41,7 @@
         "title": "Come Usare",
         "steps": {
             "1": "Collega il tuo NerdQaxe++ al computer.",
-            "2": "Fai clic su \"Connetti Dispositivo\" e seleziona il tuo dispositivo dal pop‑up.",
+            "2": "Fai clic su \"Connetti Dispositivo\" e seleziona il tuo dispositivo dal popup.",
             "3": "Scegli la versione del firmware appropriata.",
             "4": "Fai clic su \"Avvia Flashing\" per iniziare il processo.",
             "5": "Attendi il completamento del processo di flashing.",
