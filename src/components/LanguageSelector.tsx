@@ -7,12 +7,17 @@ const LanguageSelector = () => {
   const languages = [
     { value: 'en', label: 'English' },
     { value: 'de', label: 'Deutsch' },
+    { value: 'es', label: 'Español' },
+    { value: 'fr', label: 'Français' },
     { value: 'it', label: 'Italiano' },
-    { value: 'pt', label: 'Portuguese' },
+    { value: 'ja', label: '日本語' },
+    { value: 'pt', label: 'Português' },
+    { value: 'ro', label: 'Română' },
     { value: 'ru', label: 'Русский' },
-    { value: 'tr', label: 'Türkçe' },
     { value: 'sk', label: 'Slovenský' },
-    { value: 'ro', label: 'Română' }
+    { value: 'sv', label: 'Svenska' },
+    { value: 'tr', label: 'Türkçe' },
+    { value: 'zh', label: '中文' },
   ];
 
   const handleLanguageChange = (value: string) => {
