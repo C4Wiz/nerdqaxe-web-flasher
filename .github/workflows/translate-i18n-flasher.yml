@@ -21,15 +21,6 @@ jobs:
         echo "Detected language codes: $LANG_CODES"
         echo "LANG_CODES=$LANG_CODES" >> $GITHUB_ENV
 
-    - name: Write quote-fix script
-      run: |
-        printf '%s\n' \
-          "import sys" \
-          "text = open('/tmp/raw_translated.txt').read()" \
-          "text = text.replace(u'\u201c', '\\\"').replace(u'\u201d', '\\\"').replace(u'\u2018', \"\\\\'\").replace(u'\u2019', \"\\\\'\")" \
-          "print(text, end='')" \
-          > /tmp/fix_quotes.py
-
     - name: Translate to all languages
       env:
         ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -68,7 +59,7 @@ jobs:
             | sed 's/^```json[[:space:]]*//;s/^```[[:space:]]*//;s/```[[:space:]]*$//' \
             > /tmp/raw_translated.txt
 
-          python3 /tmp/fix_quotes.py > /tmp/translated_${CODE}.json
+          python3 .github/scripts/fix_quotes.py > /tmp/translated_${CODE}.json
           TRANSLATED=$(cat /tmp/translated_${CODE}.json)
 
           if [ -z "$TRANSLATED" ] || [ "$TRANSLATED" == "null" ]; then
