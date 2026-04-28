@@ -23,13 +23,12 @@ jobs:
 
     - name: Write quote-fix script
       run: |
-        cat << 'PYEOF' > /tmp/fix_quotes.py
-import sys, json
-
-text = open('/tmp/raw_translated.txt').read()
-text = text.replace('\u201c', '\\"').replace('\u201d', '\\"').replace('\u2018', "\\'").replace('\u2019', "\\'")
-print(text, end='')
-PYEOF
+        printf '%s\n' \
+          "import sys" \
+          "text = open('/tmp/raw_translated.txt').read()" \
+          "text = text.replace(u'\u201c', '\\\"').replace(u'\u201d', '\\\"').replace(u'\u2018', \"\\\\'\").replace(u'\u2019', \"\\\\'\")" \
+          "print(text, end='')" \
+          > /tmp/fix_quotes.py
 
     - name: Translate to all languages
       env:
@@ -65,12 +64,10 @@ PYEOF
               '{model: $model, max_tokens: 8192, messages: [{role: "user", content: $prompt}]}'
             )")
 
-          # Write raw response to temp file and strip markdown fences
           echo "$RESPONSE" | jq -r '.content[0].text' \
             | sed 's/^```json[[:space:]]*//;s/^```[[:space:]]*//;s/```[[:space:]]*$//' \
             > /tmp/raw_translated.txt
 
-          # Fix curly/smart quotes using python3 script (avoids shell escaping issues)
           python3 /tmp/fix_quotes.py > /tmp/translated_${CODE}.json
           TRANSLATED=$(cat /tmp/translated_${CODE}.json)
 
