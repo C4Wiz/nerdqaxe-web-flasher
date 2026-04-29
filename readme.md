@@ -1,5 +1,5 @@
 
-## NerdQaxe++ Web Flasher
+## *NerdQaxe++ Web Flasher*
 
 [<img src="web-flasher.png" style="border:5px solid red;width:400px">](https://C4Wiz.github.io/nerdqaxe-web-flasher/)
 
