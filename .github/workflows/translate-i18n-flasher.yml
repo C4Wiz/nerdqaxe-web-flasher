@@ -2,10 +2,6 @@ name: Translate i18n Files
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'src/i18n/locales/en.json'
-      - 'src/i18n/config.ts'
 
 jobs:
   translate:
