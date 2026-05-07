@@ -15,6 +15,7 @@ import sk from './locales/sk.json';
 import ja from './locales/ja.json';
 import sv from './locales/sv.json';
 import ro from './locales/ro.json';
+import pl from './locales/pl.json';
 
 i18n
   .use(LanguageDetector)
@@ -33,7 +34,8 @@ i18n
       sk: { translation: sk },
       ja: { translation: ja },
       sv: { translation: sv },
-      ro: { translation: ro }
+      ro: { translation: ro },
+      pl: { translation: pl }
     },
     fallbackLng: 'en',
     lng: 'en', // Set default language to English
