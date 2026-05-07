@@ -1,0 +1,71 @@
+
+{
+    "common": {
+      "theme": "Motyw",
+      "language": "Język",
+      "dark": "Ciemny",
+      "light": "Jasny"
+    },
+    "header": {
+      "home": "Strona główna",
+      "features": "Funkcje",
+      "instructions": "Instrukcje"
+    },
+    "hero": {
+      "title": "Flashuj swój NerdQaxe++ bezpośrednio z przeglądarki",
+      "description": "Podłącz urządzenie, wybierz wersję i rozpocznij flashowanie natychmiast. Bez konieczności konfiguracji.",
+      "getStarted": "Rozpocznij",
+      "connect": "Podłącz",
+      "disconnect": "Odłącz",
+      "selectFirmware": "Wybierz wersję firmware",
+      "startFlashing": "Rozpocznij flashowanie",
+      "flashing": "Flashowanie...",
+      "startLogging": "Rozpocznij logowanie",
+      "stopLogging": "Zatrzymaj logowanie",
+      "downloadLogs": "Pobierz logi",
+      "loggingDescription": "Podłącz urządzenie, loguj dane szeregowe i pobierz je później.",
+      "keepConfig": "Zachowaj konfigurację"
+    },
+    "features": {
+      "title": "Kluczowe funkcje",
+      "fastFlashing": {
+        "title": "Szybkie flashowanie",
+        "description": "Flashuj swój NerdQaxe++ w sekundy, a nie minuty."
+      },
+      "webBased": {
+        "title": "Oparte na przeglądarce",
+        "description": "Nie potrzebujesz specjalnego oprogramowania. Użyj swojej przeglądarki."
+      }
+    },
+    "instructions": {
+      "title": "Jak używać",
+      "steps": {
+        "1": "Podłącz swój NerdQaxe++ do komputera.",
+        "2": "Kliknij \"Podłącz urządzenie\" i wybierz swoje urządzenie z okna popup.",
+        "3": "Wybierz odpowiednią wersję firmware.",
+        "4": "Kliknij \"Rozpocznij flashowanie\", aby rozpocząć proces.",
+        "5": "Poczekaj na zakończenie procesu flashowania.",
+        "6": "Odłącz i zrestartuj urządzenie."
+      },
+      "moreInfo": "Aby uzyskać bardziej szczegółowe instrukcje, zapoznaj się z naszą",
+      "documentation": "dokumentacją"
+    },
+    "status": {
+      "connecting": "Łączenie z urządzeniem...",
+      "connected": "Połączono pomyślnie!",
+      "selectBoth": "Proszę wybrać zarówno model urządzenia, jak i wersję płytki",
+      "connectFirst": "Najpierw podłącz urządzenie",
+      "preparing": "Przygotowywanie do flashowania...",
+      "flashing": "Flashowanie: {{percent}}% ukończone",
+      "completed": "Flashowanie zakończone. Ponowne uruchamianie urządzenia, proszę czekać...",
+      "success": "Flashowanie zakończone pomyślnie! Urządzenie zostało zrestartowane.",
+      "loggingStarted": "Rozpoczęto logowanie szeregowe...",
+      "downloadFirmware": "Pobieranie firmware i weryfikacja jego integralności..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "Błąd kompatybilności przeglądarki",
+        "description": "Ta aplikacja wymaga przeglądarki opartej na Chromium (takiej jak Google Chrome, Microsoft Edge lub Brave), aby działać poprawnie. Przełącz się na zgodną przeglądarkę i spróbuj ponownie."
+      }
+    }
+}

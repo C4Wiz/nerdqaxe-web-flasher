@@ -11,6 +11,7 @@ const LanguageSelector = () => {
     { value: 'fr', label: 'Français' },
     { value: 'it', label: 'Italiano' },
     { value: 'ja', label: '日本語' },
+    { value: 'pl', label: 'Polski' },
     { value: 'pt', label: 'Português' },
     { value: 'ro', label: 'Română' },
     { value: 'ru', label: 'Русский' },
