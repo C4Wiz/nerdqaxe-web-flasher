@@ -43,11 +43,6 @@ export default function LandingHero() {
     setIsChromiumBased(isChromium);
   }, []);
 
-  // Auto-select the only available device
-  useEffect(() => {
-    setSelectedDevice(device_data.devices[0].name);
-  }, []);
-
   useEffect(() => {
     if (terminalContainerRef.current && !terminalRef.current && isLogging) {
       const term = new Terminal({
@@ -102,14 +97,20 @@ export default function LandingHero() {
     }
   };
 
-  // Update firmware options on mount and when showPreReleases changes
+  // Update firmware options once a device is selected, and when showPreReleases changes.
+  // Gated on selectedDevice so we don't fetch (or show options) before the user has
+  // picked a device, matching the connect -> device -> firmware sequence.
   useEffect(() => {
+    if (!selectedDevice) {
+      setFirmwareOptions([]);
+      return;
+    }
     const updateFirmwareOptions = async () => {
       const firmwareData = await fetchReleases();
       setFirmwareOptions(firmwareData);
     };
     updateFirmwareOptions();
-  }, [showPreReleases]);
+  }, [showPreReleases, selectedDevice]);
 
   const handleConnect = async () => {
     setIsConnecting(true)
@@ -146,6 +147,10 @@ export default function LandingHero() {
       }
       serialPortRef.current = null;
       setIsConnected(false)
+      // Reset downstream selections so re-connecting starts the sequence over
+      setSelectedDevice('')
+      setSelectedFirmware('')
+      setFirmwareOptions([])
       setStatus("")
     } catch (error) {
       console.error('Disconnect error:', error);
@@ -430,12 +435,15 @@ export default function LandingHero() {
                 {isConnected ? t('hero.disconnect') : t('hero.connect')}
                 <Usb className="ml-2 h-4 w-4" />
               </Button>
-              <Selector
-                placeholder={t('hero.selectDevice')}
-                values={device_data.devices.map((d) => d.name)}
-                onValueChange={setSelectedDevice}
-              />
-              {selectedDevice && (
+              {isConnected && (
+                <Selector
+                  placeholder={t('hero.selectDevice')}
+                  values={device_data.devices.map((d) => d.name)}
+                  onValueChange={setSelectedDevice}
+                  disabled={isConnecting || isFlashing}
+                />
+              )}
+              {isConnected && selectedDevice && (
                 <Selector
                   placeholder={t('hero.selectFirmware')}
                   values={firmwareOptions.map((f) => f.version)}
