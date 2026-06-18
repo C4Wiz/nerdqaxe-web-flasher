@@ -430,7 +430,12 @@ export default function LandingHero() {
                 {isConnected ? t('hero.disconnect') : t('hero.connect')}
                 <Usb className="ml-2 h-4 w-4" />
               </Button>
-              {isConnected && (
+              <Selector
+                placeholder={t('hero.selectDevice')}
+                values={device_data.devices.map((d) => d.name)}
+                onValueChange={setSelectedDevice}
+              />
+              {selectedDevice && (
                 <Selector
                   placeholder={t('hero.selectFirmware')}
                   values={firmwareOptions.map((f) => f.version)}
