@@ -1,71 +1,72 @@
 
 {
     "common": {
-        "theme": "Tema",
-        "language": "Dil",
-        "dark": "Karanlık",
-        "light": "Açık"
+      "theme": "Tema",
+      "language": "Dil",
+      "dark": "Karanlık",
+      "light": "Açık"
     },
     "header": {
-        "home": "Ana Sayfa",
-        "features": "Özellikler",
-        "instructions": "Talimatlar"
+      "home": "Ana Sayfa",
+      "features": "Özellikler",
+      "instructions": "Talimatlar"
     },
     "hero": {
-        "title": "NerdQaxe++'ınızı doğrudan web üzerinden flaşlayın",
-        "description": "Cihazınızı bağlayın, sürümü seçin ve hemen flaşlamaya başlayın. Kurulum gerekmez.",
-        "getStarted": "Başlayın",
-        "connect": "Bağlan",
-        "disconnect": "Bağlantıyı Kes",
-        "selectFirmware": "Donanım yazılımı sürümünü seç",
-        "startFlashing": "Flaşlamayı Başlat",
-        "flashing": "Flaşlama...",
-        "startLogging": "Kaydı Başlat",
-        "stopLogging": "Kaydı Durdur",
-        "downloadLogs": "Kayıtları İndir",
-        "loggingDescription": "Cihazınızı bağlayın, seri verileri kaydedin ve daha sonra indirin.",
-        "keepConfig": "Yapılandırmayı Koru"
+      "title": "NerdQAxe++ veya NerdOCTAxe-Gamma'nızı doğrudan web üzerinden flaşlayın",
+      "description": "Cihazınızı bağlayın, cihazınızı seçin, sürümü seçin ve hemen flaşlamaya başlayın. Kurulum gerekmez.",
+      "getStarted": "Başlayın",
+      "connect": "Bağlan",
+      "selectDevice": "Cihazı seç",
+      "disconnect": "Bağlantıyı Kes",
+      "selectFirmware": "Donanım yazılımı sürümünü seç",
+      "startFlashing": "Flaşlamayı Başlat",
+      "flashing": "Flaşlama...",
+      "startLogging": "Kaydı Başlat",
+      "stopLogging": "Kaydı Durdur",
+      "downloadLogs": "Kayıtları İndir",
+      "loggingDescription": "Cihazınızı bağlayın, seri verileri kaydedin ve daha sonra indirin.",
+      "keepConfig": "Yapılandırmayı Koru"
     },
     "features": {
-        "title": "Ana Özellikler",
-        "fastFlashing": {
-            "title": "Hızlı Flaşlama",
-            "description": "NerdQaxe++'ınızı saniyeler içinde, dakikalar yerine flaşlayın."
-        },
-        "webBased": {
-            "title": "Web Tabanlı",
-            "description": "Özel bir yazılıma gerek yok. Web tarayıcınızı kullanın."
-        }
+      "title": "Ana Özellikler",
+      "fastFlashing": {
+        "title": "Hızlı Flaşlama",
+        "description": "NerdQaxe++ veya NerdOCTaxe-Gamma'nızı dakikalar yerine saniyeler içinde flaşlayın."
+      },
+      "webBased": {
+        "title": "Web Tabanlı",
+        "description": "Özel bir yazılıma gerek yok. Web tarayıcınızı kullanın."
+      }
     },
     "instructions": {
-        "title": "Nasıl Kullanılır",
-        "steps": {
-            "1": "NerdQaxe++'ınızı bilgisayarınıza bağlayın.",
-            "2": "\"Cihazı Bağla\"ya tıklayın ve açılan pencereden cihazınızı seçin.",
-            "3": "Uygun donanım yazılımı sürümünü seçin.",
-            "4": "İşleme başlamak için \"Flaşlamayı Başlat\"a tıklayın.",
-            "5": "Flaşlama işleminin tamamlanmasını bekleyin.",
-            "6": "Bağlantıyı kesin ve cihazınızı yeniden başlatın."
-        },
-        "moreInfo": "Daha ayrıntılı talimatlar için lütfen bizim",
-        "documentation": "belgemizi"
+      "title": "Nasıl Kullanılır",
+      "steps": {
+        "1": "NerdQaxe++'ınızı bilgisayarınıza bağlayın.",
+        "2": "\"Cihazı Bağla\"ya tıklayın ve açılan pencereden cihazınızı seçin.",
+        "3": "Uygun donanım yazılımı sürümünü seçin.",
+        "4": "İşleme başlamak için \"Flaşlamayı Başlat\"a tıklayın.",
+        "5": "Flaşlama işleminin tamamlanmasını bekleyin.",
+        "6": "Bağlantıyı kesin ve cihazınızı yeniden başlatın."
+      },
+      "moreInfo": "Daha ayrıntılı talimatlar için lütfen bizim",
+      "documentation": "belgemizi"
     },
     "status": {
-        "connecting": "Cihaza bağlanıyor...",
-        "connected": "Bağlantı başarılı!",
-        "selectBoth": "Lütfen hem cihaz modelini hem de kart sürümünü seçin",
-        "connectFirst": "Lütfen önce bir cihaza bağlanın",
-        "preparing": "Flaşlamaya hazırlanıyor...",
-        "flashing": "Flaşlama: {{percent}}% tamamlandı",
-        "completed": "Flaşlama tamamlandı. Cihaz yeniden başlatılıyor, lütfen bekleyin...",
-        "success": "Flaşlama başarıyla tamamlandı! Cihaz yeniden başlatıldı.",
-        "loggingStarted": "Seri kayıt başlatıldı...",
-        "downloadFirmware": "Donanım yazılımı indiriliyor ve bütünlüğü doğrulanıyor..."
+      "connecting": "Cihaza bağlanıyor...",
+      "connected": "Bağlantı başarılı!",
+      "selectBoth": "Lütfen hem cihaz modelini hem de kart sürümünü seçin",
+      "connectFirst": "Lütfen önce bir cihaza bağlanın",
+      "preparing": "Flaşlamaya hazırlanıyor...",
+      "flashing": "Flaşlama: {{percent}}% tamamlandı",
+      "completed": "Flaşlama tamamlandı. Cihaz yeniden başlatılıyor, lütfen bekleyin...",
+      "success": "Flaşlama başarıyla tamamlandı! Cihaz yeniden başlatıldı.",
+      "loggingStarted": "Seri kayıt başlatıldı...",
+      "downloadFirmware": "Donanım yazılımı indiriliyor ve bütünlüğü doğrulanıyor..."
     },
     "errors": {
-        "browserCompatibility": {
-            "title": "Tarayıcı Uyumluluğu Hatası",
-            "description": "Bu uygulama düzgün çalışması için Chromium tabanlı bir tarayıcı (Google Chrome, Microsoft Edge veya Brave gibi) gerektirir. Lütfen uyumlu bir tarayıcıya geçin ve tekrar deneyin."
-        }
+      "browserCompatibility": {
+        "title": "Tarayıcı Uyumluluğu Hatası",
+        "description": "Bu uygulama düzgün çalışması için Chromium tabanlı bir tarayıcı (Google Chrome, Microsoft Edge veya Brave gibi) gerektirir. Lütfen uyumlu bir tarayıcıya geçin ve tekrar deneyin."
+      }
     }
 }

@@ -12,10 +12,11 @@
       "instructions": "Instruções"
     },
     "hero": {
-      "title": "Flash seu NerdQaxe++ diretamente da web",
-      "description": "Conecte seu dispositivo, selecione a versão e comece a flashar imediatamente. Nenhuma configuração necessária.",
+      "title": "Flash seu NerdQAxe++ ou NerdOCTAxe-Gamma diretamente da web",
+      "description": "Conecte seu dispositivo, selecione seu dispositivo, selecione a versão e comece a flashar imediatamente. Nenhuma configuração necessária.",
       "getStarted": "Começar",
       "connect": "Conectar",
+      "selectDevice": "Selecionar o dispositivo",
       "disconnect": "Desconectar",
       "selectFirmware": "Selecionar versão do firmware",
       "startFlashing": "Iniciar Flash",
@@ -30,18 +31,18 @@
       "title": "Principais Recursos",
       "fastFlashing": {
         "title": "Flash Rápido",
-        "description": "Flash seu NerdQaxe++ em segundos, não minutos."
+        "description": "Flash seu NerdQaxe++ ou NerdOCTaxe-Gamma em segundos, não minutos."
       },
       "webBased": {
         "title": "Baseado na Web",
-        "description": "Não precisa de software especial. Use seu navegador."
+        "description": "Não precisa de software especial. Use seu navegador web."
       }
     },
     "instructions": {
       "title": "Como Usar",
       "steps": {
         "1": "Conecte seu NerdQaxe++ ao computador.",
-        "2": "Clique em \"Conectar\" e selecione seu dispositivo na janela que aparecer.",
+        "2": "Clique em \"Conectar Dispositivo\" e selecione seu dispositivo na janela que aparecer.",
         "3": "Escolha a versão de firmware apropriada.",
         "4": "Clique em \"Iniciar Flash\" para começar o processo.",
         "5": "Aguarde a conclusão do processo de flash.",

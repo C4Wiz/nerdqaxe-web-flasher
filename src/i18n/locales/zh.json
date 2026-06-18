@@ -12,10 +12,11 @@
       "instructions": "使用说明"
     },
     "hero": {
-      "title": "直接从网页刷写您的 NerdQaxe++",
-      "description": "连接您的设备，选择版本，立即开始刷写。无需设置。",
+      "title": "直接从网页刷写您的 NerdQAxe++ 或 NerdOCTAxe-Gamma",
+      "description": "连接您的设备，选择您的设备，选择版本，立即开始刷写。无需设置。",
       "getStarted": "开始使用",
       "connect": "连接",
+      "selectDevice": "选择设备",
       "disconnect": "断开连接",
       "selectFirmware": "选择固件版本",
       "startFlashing": "开始刷写",
@@ -30,7 +31,7 @@
       "title": "主要功能",
       "fastFlashing": {
         "title": "快速刷写",
-        "description": "在几秒钟内刷写您的 NerdQaxe++，而不是几分钟。"
+        "description": "在几秒钟内刷写您的 NerdQaxe++ 或 NerdOCTaxe-Gamma，而不是几分钟。"
       },
       "webBased": {
         "title": "基于网页",

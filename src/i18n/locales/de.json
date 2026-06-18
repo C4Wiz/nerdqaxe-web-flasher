@@ -12,10 +12,11 @@
     "instructions": "Anleitungen"
   },
   "hero": {
-    "title": "Flashen Sie Ihren NerdQaxe++ direkt aus dem Web",
-    "description": "Verbinden Sie Ihr Gerät, wählen Sie die Version aus und starten Sie sofort das Flashen. Keine Einrichtung erforderlich.",
+    "title": "Flashen Sie Ihren NerdQAxe++ oder NerdOCTAxe-Gamma direkt aus dem Web",
+    "description": "Verbinden Sie Ihr Gerät, wählen Sie Ihr Gerät aus, wählen Sie die Version aus und starten Sie sofort das Flashen. Keine Einrichtung erforderlich.",
     "getStarted": "Loslegen",
     "connect": "Verbinden",
+    "selectDevice": "Gerät auswählen",
     "disconnect": "Trennen",
     "selectFirmware": "Firmware-Version auswählen",
     "startFlashing": "Flashen starten",
@@ -30,7 +31,7 @@
     "title": "Hauptfunktionen",
     "fastFlashing": {
       "title": "Schnelles Flashen",
-      "description": "Flashen Sie Ihren NerdQaxe++ in Sekunden, nicht Minuten."
+      "description": "Flashen Sie Ihren NerdQaxe++ oder NerdOCTaxe-Gamma in Sekunden, nicht Minuten."
     },
     "webBased": {
       "title": "Webbasiert",

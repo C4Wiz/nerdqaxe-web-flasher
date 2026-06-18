@@ -12,10 +12,11 @@
     "instructions": "Inštrukcie"
   },
   "hero": {
-    "title": "Flashujte svoj NerdQaxe++ priamo z webu",
-    "description": "Pripojte svoje zariadenie, vyberte verziu a okamžite spustite flashovanie. Nie je potrebné žiadne nastavenie.",
+    "title": "Flashujte svoj NerdQAxe++ alebo NerdOCTAxe-Gamma priamo z webu",
+    "description": "Pripojte svoje zariadenie, vyberte zariadenie, vyberte verziu a okamžite spustite flashovanie. Nie je potrebné žiadne nastavenie.",
     "getStarted": "Začať",
     "connect": "Pripojiť",
+    "selectDevice": "Vyberte zariadenie",
     "disconnect": "Odpojiť",
     "selectFirmware": "Vyberte verziu firmvéru",
     "startFlashing": "Spustiť flashovanie",
@@ -30,7 +31,7 @@
     "title": "Hlavné funkcie",
     "fastFlashing": {
       "title": "Rýchle flashovanie",
-      "description": "Flashnite svoj NerdQaxe++ v sekundách, nie minútach."
+      "description": "Flashnite svoj NerdQaxe++ alebo NerdOCTaxe-Gamma v sekundách, nie minútach."
     },
     "webBased": {
       "title": "Webové",

@@ -12,10 +12,11 @@
       "instructions": "Instrucciones"
     },
     "hero": {
-      "title": "Flashea tu NerdQaxe++ directamente desde la web",
-      "description": "Conecta tu dispositivo, selecciona la versión y comienza a flashear inmediatamente. No requiere configuración.",
+      "title": "Flashea tu NerdQAxe++ o NerdOCTAxe-Gamma directamente desde la web",
+      "description": "Conecta tu dispositivo, selecciona tu dispositivo, selecciona la versión y comienza a flashear inmediatamente. No requiere configuración.",
       "getStarted": "Comenzar",
       "connect": "Conectar",
+      "selectDevice": "Seleccionar el dispositivo",
       "disconnect": "Desconectar",
       "selectFirmware": "Seleccionar versión de firmware",
       "startFlashing": "Comenzar Flasheo",
@@ -30,7 +31,7 @@
       "title": "Características Principales",
       "fastFlashing": {
         "title": "Flasheo Rápido",
-        "description": "Flashea tu NerdQaxe++ en segundos, no minutos."
+        "description": "Flashea tu NerdQaxe++ o NerdOCTaxe-Gamma en segundos, no minutos."
       },
       "webBased": {
         "title": "Basado en Web",

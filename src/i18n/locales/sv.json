@@ -12,10 +12,11 @@
       "instructions": "Instruktioner"
     },
     "hero": {
-      "title": "Flasha din NerdQaxe++ direkt från webben",
-      "description": "Anslut din enhet, välj version och börja flasha omedelbart. Ingen installation krävs.",
+      "title": "Flasha din NerdQAxe++ eller NerdOCTAxe-Gamma direkt från webben",
+      "description": "Anslut din enhet, välj din enhet, välj version och börja flasha omedelbart. Ingen installation krävs.",
       "getStarted": "Kom igång",
       "connect": "Anslut",
+      "selectDevice": "Välj enheten",
       "disconnect": "Koppla från",
       "selectFirmware": "Välj firmware-version",
       "startFlashing": "Börja flasha",
@@ -30,7 +31,7 @@
       "title": "Nyckelfunktioner",
       "fastFlashing": {
         "title": "Snabb flashning",
-        "description": "Flasha din NerdQaxe++ på sekunder, inte minuter."
+        "description": "Flasha din NerdQaxe++ eller NerdOCTaxe-Gamma på sekunder, inte minuter."
       },
       "webBased": {
         "title": "Webbaserad",
