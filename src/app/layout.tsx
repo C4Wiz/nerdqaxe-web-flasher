@@ -7,8 +7,8 @@ import { I18nProvider } from '../components/I18nProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'NerdQaxe++ Web Flasher',
-  description: 'Flash your NerdQaxe++ directly from the web',
+  title: 'NerdQaxe++ & NerdOCTaxe-Gamma Web Flasher',
+  description: 'Flash your NerdQaxe++ & NerdOCTaxe-Gamma directly from the web',
   icons: {
     icon: [
       {
