@@ -11,8 +11,8 @@
       "instructions": "Instructions"
     },
     "hero": {
-      "title": "Flash your NerdQAxe++ or NerdOCTAxe-Gamma directly from the web",
-      "description": "Connect your device, select your device, select the version, and start flashing immediately. No setup required.",
+      "title": "Flash your NerdQaxe++ or NerdOCTaxe-Gamma directly from the web",
+      "description": "Connect, select your device, select a firmware version, and start flashing immediately. No setup required.",
       "getStarted": "Get Started",
       "connect": "Connect",
       "selectDevice": "Select the device",
@@ -40,8 +40,8 @@
     "instructions": {
       "title": "How to Use",
       "steps": {
-        "1": "Connect your NerdQaxe++ to your computer.",
-        "2": "Click \"Connect Device\" and select your device from the popup.",
+        "1": "Connect your NerdQaxe++ or NerdOCTaxe-Gamma to your computer.",
+        "2": "Click \"Connect Device\" and select your device from the device menu.",
         "3": "Choose the appropriate firmware version.",
         "4": "Click \"Start Flashing\" to begin the process.",
         "5": "Wait for the flashing process to complete.",
