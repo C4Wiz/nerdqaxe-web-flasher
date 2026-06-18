@@ -4,6 +4,11 @@
             "name": "NerdQAxe++ (4 x BM1370)",
             "repository": "https://github.com/C4Wiz/ESP-Miner-NerdQAxePlus",
             "file": "NerdQAxe++"
+        },
+        {
+            "name": "NerdOCTAXE Gamma (8 x BM1370)",
+            "repository": "https://github.com/C4Wiz/ESP-Miner-NerdQAxePlus",
+            "file": "NerdOCTAXE-Gamma"
         }
     ]
 }
